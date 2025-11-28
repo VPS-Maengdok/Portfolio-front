@@ -1,0 +1,27 @@
+services:
+  portfolio_front:
+    container_name: maengdok_portfolio_front
+    restart: always
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "${PORT:-3998}:3000"
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    stdin_open: true
+    tty: true
+    networks:
+      - portfolio
+    env_file:
+      - .env
+
+networks:
+  portfolio:
+    external: true
