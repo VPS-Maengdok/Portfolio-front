@@ -1,0 +1,51 @@
+.resume {
+  display: grid;
+  margin: 2.5em;
+  overflow: hidden;
+  row-gap: 2em;
+}
+
+.resume > h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.resume h6 {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #e1ca99;
+}
+
+.resume span,
+.resume strong {
+  color: #e1ca99;
+}
+
+.resume-container {
+  display: grid;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.resume-header h3 {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: bold;
+  color: #e1ca99;
+}
+
+.resume h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.resume .resume-title {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.resume .icon.resume-download {
+  align-self: center;
+  cursor: pointer;
+}

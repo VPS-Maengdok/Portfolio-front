@@ -1,0 +1,47 @@
+.locale-icons {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  min-height: 30px;
+  min-width: 30px;
+}
+
+.locale-icon {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.locale-list {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 6px;
+  z-index: 1;
+}
+
+.locale-list .locale-icon {
+  transform: translateY(0px);
+  animation: pop-up 0.22s ease-out forwards;
+}
+
+.locale-list .locale-icon:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.locale-list .locale-icon:nth-child(2) {
+  opacity: 0;
+  animation-delay: 70ms;
+}
+
+.locale-list .locale-icon:nth-child(3) {
+  opacity: 0;
+  animation-delay: 140ms;
+}
+
+@keyframes pop-up {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

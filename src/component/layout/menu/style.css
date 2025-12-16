@@ -1,0 +1,21 @@
+.menu {
+  display: grid;
+}
+
+.menu > h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: grey;
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.menu > h2:hover,
+.menu > .selected {
+  color: black;
+}
+
+.menu > .selected > span {
+  color: #e1ca99;
+}

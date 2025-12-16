@@ -1,0 +1,118 @@
+{
+  "header": {
+    "pronounciation": "baldoki",
+    "title": ["Développeur Full Stack", "Développeur Back End"]
+  },
+  "menu": {
+    "whoAmI": "Qui suis-je ?",
+    "whoAmISelected": "quiSuisJe",
+    "projects": "Projets",
+    "projectsSelected": "projets",
+    "cv": "Curriculum",
+    "cvSelected": "curriculum"
+  },
+  "body": {
+    "projects": "projets"
+  },
+  "misc": {
+    "projectType": {
+      "workProject": "Projet d'entreprise",
+      "schoolProject": "Project scolaire",
+      "sideProject": "Projet personnel"
+    }
+  },
+  "introduction": {
+    "selfIntroduction": {
+      "title": "quiSuisJe",
+      "description": [
+        "<p>Développeur français passionné, doté d’une <strong>forte capacité d’apprentissage</strong> et d’<strong>adaptation</strong>. Toujours en quête de nouvelles connaissances, j’accorde une importance particulière à l’<strong>optimisation</strong> : <strong>refactorisation</strong>, <strong>amélioration de processus</strong> ou <strong>décomposition précise des étapes</strong> nécessaires à la réalisation d’une action.</p>",
+        "<p>Je cherche systématiquement à <strong>comprendre en profondeur</strong> ce que je fais. Avant d’agir, j’analyse les options possibles afin de déterminer la <strong>voie la plus pertinente</strong> et la <strong>plus efficace</strong>.</p>",
+        "<p>J’ai un attrait particulier pour le <strong>Back End</strong> en raison de sa logique, un domaine dans lequel je me sens pleinement à l’aise.</p>"
+      ]
+    },
+    "journey": {
+      "title": "monParcours",
+      "description": [
+        "<p>J’ai découvert le développement à l’époque des forums et de l’essor de Minecraft. C’est en créant mes premiers <strong>forums</strong> et en configurant des <strong>serveurs Minecraft</strong> que j’ai trouvé ma première véritable passion pour la programmation. Cette intuition s’est confirmée au lycée, lorsque j’ai découvert le <strong>langage C</strong>, ce qui m’a naturellement conduit à intégrer <strong>Epitech Paris</strong> pour poursuivre des études en informatique.</p>",
+        "<p>Faute de ressources financières, je n’ai pas pu aller au bout de ce parcours, mais j’ai choisi de mettre à profit ma seconde passion : les <strong>langues étrangères</strong>, et plus particulièrement les <strong>langues asiatiques</strong>. J’ai ainsi étudié le <strong>coréen</strong> dans l’objectif de travailler un jour en Corée du Sud en tant que développeur.</p>",
+        "<p>Après avoir obtenu ma <strong>licence de coréen</strong> à l’<strong>UFR LCAO</strong> de l’université <strong>Paris Cité</strong>, j’ai renoué avec mon parcours initial et me suis formé pour devenir <strong>Développeur Full Stack</strong>, validant au passage un <strong>MBA</strong> de <strong>Manager de projet web et digital</strong>. Grâce à mon <strong>alternance</strong> chez <strong>BETC</strong>, j’ai pu approfondir mes compétences en développement et en découvrir toutes les facettes, <strong>porté par une équipe IT de qualité</strong>, notamment le Lead Developer et le Senior Developer, dont l’accompagnement a été déterminant.</p>"
+      ]
+    },
+    "motivation": {
+      "title": "ceQuiMeMotive",
+      "description": [
+        "<p>Bien qu’il soit confortable de rester dans ma zone de confort, je recherche activement des situations qui m’obligent à en sortir. J’aime me confronter à des <strong>défis</strong>, qu’il s’agisse de voyager seul à l’autre bout du monde pour découvrir une <strong>nouvelle culture</strong> et appréhender une <strong>nouvelle langue</strong>, ou de me lancer dans des projets web dans un <strong>langage</strong> encore inconnu ou que je ne maîtrise pas encore afin d’élargir mes compétences et de renforcer celles que je possède déjà.</p>",
+        "<p>J’ai besoin d’être <strong>stimulé intellectuellement</strong> pour rester motivé et éviter toute forme de monotonie.</p>"
+      ]
+    },
+    "lookingFor": {
+      "title": "ceQueJeRecherche",
+      "description": [
+        "<p>Mon ambition est de <strong>progresser continuellement</strong> tout en restant <strong>stimulé intellectuellement</strong> par des projets variés. J’apprécie particulièrement être confronté à de <strong>nouvelles langues</strong> et à de <strong>nouvelles cultures</strong>, ce qui motive mon ouverture à des opportunités professionnelles en Asie (<span>Corée du Sud</span>, <span>Japon</span>, <span>Vietnam</span>, <span>Chine</span>).</p>",
+        "<p>Polyvalent par nature, j’aime travailler sur des <strong>projets diversifiés</strong> qui me permettent d’explorer différents aspects du développement. Même si ma préférence va clairement au <strong>Back End</strong> (<strong>Symfony</strong>, <strong>Django</strong>), un poste dédié à ce domaine ou de <strong>Full Stack</strong> me convient parfaitement.</p>"
+      ]
+    },
+    "passion": {
+      "title": "ceQuiMePassionne",
+      "description": [
+        "<p>J’ai plusieurs passions : les <strong>jeux vidéo</strong>, l’<strong>Asie</strong> avec ses langues, son histoire et ses cultures, le <strong>développement</strong> ainsi que les <strong>animaux</strong>.</p>",
+        "<p>Dans l’univers du jeu vidéo, j’ai un attrait particulier pour les <strong>MMORPG</strong>. J’apprécie la progression continue qu’ils offrent, qu’il s’agisse d’optimiser ses cycles en tant que <span>DPS</span> ou <span>soigneur</span>, ou d’améliorer son équipement pour rester compétitif. Commencer un nouveau MMORPG est pour moi l’occasion idéale de découvrir un univers en même temps que les autres joueurs, tout en travaillant sur le <span>build</span> le plus adapté à mon style de jeu afin de rester dans le haut du <span>DPS meter</span>. J’apprécie également la dimension stratégique des <strong>donjons</strong>, <strong>raids</strong> et <strong>world boss</strong>, qui demandent un véritable apprentissage et une excellente coordination.</p>",
+        "<p>Ma passion pour l’Asie remonte à l’enfance. J’étais fasciné par la <strong>calligraphie</strong>, par la <strong>mythologie</strong> et par l’esthétique propre à ces cultures. Avec le temps, cette curiosité s’est renforcée, au point de me mener vers une <strong>licence de coréen</strong>, au cours de laquelle j’ai étudié non seulement la langue, mais aussi l’<span>histoire</span>, la <span>culture</span>, l’<span>anthropologie</span> et la <span>politique</span> de la Corée. Mes voyages sont principalement orientés vers l’Asie, et je continuerai à explorer cette région tant que je n’aurai pas assouvi ma soif d’apprentissage, quitte à retourner plusieurs fois dans un même pays.</p>",
+        "<p>Enfin, ma sensibilité pour les <span>animaux</span> m’accompagne depuis l’enfance. Je souhaitais devenir zoologiste, mais un stage chez un vétérinaire <span>—</span> durant lequel j’ai assisté à une opération <span>—</span> m’a fait reconsidérer cette voie. Je garde néanmoins un profond respect pour les métiers en lien avec les animaux. Ce sont des professions essentielles, qui demandent une attention particulière à ces êtres majestueux qu’il est <span>important de protéger et d’aimer</span>.</p>"
+      ]
+    },
+    "mentions": {
+      "title": "mentionsSpeciales",
+      "description": [
+        "<p>Je tiens à exprimer ma gratitude envers toutes les personnes qui ont apporté du soutien, de la bienveillance ou une influence positive dans mon parcours, que ce soit dans mon projet de vie, mon apprentissage ou au travers de collaborations enrichissantes :</p>",
+        "<ul><li><span>-></span> Idris C.</li><li><span>-></span> Nirund P.</li><li><span>-></span> David R.</li><li><span>-></span> Abder. Z.</li></li><span>-></span> Yann C.-T.</li><li><span>-></span> Rémi R.</li><li><span>-></span> David P.</li><li><span>-></span> Hiren P.</li></ul>"
+      ]
+    }
+  },
+  "projects": {
+    "title": "projets"
+  },
+  "resume": {
+    "title": "curriculumVitae",
+    "hasVisa": "Visa hors EU requis",
+    "pdfPreparation": "Préparation du PDF...",
+    "contract": {
+      "type": ["CDI"],
+      "description": "Type de contrat :"
+    },
+    "freelance": {
+      "true": "Freelance"
+    },
+    "experience": {
+      "title": "experiencesProfessionnelles",
+      "actualWork": "Emploi actuel"
+    },
+    "education": {
+      "title": "diplômes"
+    },
+    "project": {
+      "title": "projets"
+    },
+    "technology": {
+      "title": "technologies"
+    },
+    "skill": {
+      "title": "skills"
+    },
+    "link": {
+      "title": "liens"
+    },
+    "expectedCountry": {
+      "description": "Mobilité :"
+    },
+    "visaAvailableFor": {
+      "description": "Visa disponible pour :"
+    },
+    "language": {
+      "description": "Langues :"
+    },
+    "workType": {
+      "description": "Télétravail :"
+    }
+  }
+}

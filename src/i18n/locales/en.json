@@ -1,0 +1,96 @@
+{
+  "header": {
+    "pronounciation": "baldoki",
+    "title": ["Développeur Full Stack", "Développeur Back End"]
+  },
+  "menu": {
+    "whoAmI": "Who Am I?",
+    "whoAmISelected": "whoAmI",
+    "projects": "Projects",
+    "projectsSelected": "projects",
+    "cv": "Resume",
+    "cvSelected": "resume"
+  },
+  "body": {
+    "projects": "projects"
+  },
+  "misc": {
+    "projectType": {
+      "workProject": "Work project",
+      "schoolProject": "School project",
+      "sideProject": "Side project"
+    }
+  },
+  "introduction": {
+    "selfIntroduction": {
+      "title": "whoAmI",
+      "description": ["<p>Work in progress, will be translated soon."]
+    },
+    "journey": {
+      "title": "myJourney",
+      "description": ["<p>Work in progress, will be translated soon."]
+    },
+    "motivation": {
+      "title": "whatMotivatesMe",
+      "description": ["<p>Work in progress, will be translated soon."]
+    },
+    "lookingFor": {
+      "title": "whatImLookingFor",
+      "description": ["<p>Work in progress, will be translated soon."]
+    },
+    "passion": {
+      "title": "whatPassionatesMe",
+      "description": ["<p>Work in progress, will be translated soon."]
+    },
+    "mentions": {
+      "title": "specialHonours",
+      "description": ["<p>Work in progress, will be translated soon."]
+    }
+  },
+  "projects": {
+    "title": "projects"
+  },
+  "resume": {
+    "title": "resume",
+    "hasVisa": "Non-EU visa required",
+    "pdfPreparation": "Preparing the PDF...",
+    "contract": {
+      "type": ["Long term"],
+      "description": "Contract type:"
+    },
+    "freelance": {
+      "true": "Freelance"
+    },
+    "experience": {
+      "title": "workExperiences",
+      "actualWork": "Actual work"
+    },
+    "education": {
+      "title": "education"
+    },
+    "project": {
+      "title": "projects"
+    },
+    "technology": {
+      "title": "technologies"
+    },
+    "skill": {
+      "title": "skills"
+    },
+    "link": {
+      "title": "links"
+    },
+    "expectedCountry": {
+      "description": "Willing to work from:"
+    },
+    "visaAvailableFor": {
+      "description": "Visa available for:"
+    },
+    "language": {
+      "description": "Languagues:"
+    },
+    "workType": {
+      "description": "work Type:"
+    }
+  }
+}

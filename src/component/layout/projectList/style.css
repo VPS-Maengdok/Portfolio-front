@@ -1,0 +1,19 @@
+.project-list {
+  display: grid;
+  margin: 2.5em;
+  gap: 2em;
+  overflow: hidden;
+}
+
+.project-list > h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.project-list-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: none;
+  height: 100%;
+}

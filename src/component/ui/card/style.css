@@ -1,0 +1,179 @@
+.card {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+  background-color: rgb(12, 12, 12);
+  padding: 40px;
+  border-radius: 10px;
+  border: 2px solid rgb(24, 24, 24);
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 20px;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: fit-content;
+  flex: 1;
+}
+
+.card.background-image {
+  background-image: url('/image/Colorized Fox 20percent.svg');
+  background-size: 15%;
+  background-repeat: no-repeat;
+  background-position: bottom 50% right 5%;
+  min-height: 300px;
+}
+
+.card .container:not(.background-image) {
+  height: auto;
+}
+
+.card.clickable:hover {
+  background-color: #212227;
+  cursor: pointer;
+}
+
+.card .technology-container {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.card .project-list-project-technology-container,
+.card .resume-experience-technology-container,
+.card .resume-education-technology-container,
+.card .resume-project-technology-container,
+.card .resume-technology-container,
+.card .resume-experience-company,
+.card .resume-education-school {
+  display: inline-flex;
+  gap: 8px;
+  width: fit-content;
+}
+
+.card .project-list-project-technology-icon,
+.card .resume-header-location,
+.card .resume-header-work-type,
+.card .resume-header-contract-type-container,
+.card .resume-header-expected-country,
+.card .resume-header-language,
+.card .resume-experience-technology-icon,
+.card .resume-education-technology-icon,
+.card .resume-project-technology-icon,
+.card .resume-technology-icon {
+  display: inline-flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.card .project-list-project-technology-icon .icon,
+.card .resume-header-link-content a .icon,
+.card .resume-experience-technology-icon .icon,
+.card .resume-education-technology-icon .icon,
+.card .resume-project-technology-icon .icon,
+.card .resume-technology-icon .icon {
+  align-self: center;
+}
+
+.card .project-list-project-skill-list-container,
+.card .resume-header.contract-type,
+.card .resume-experience-skill-list-container,
+.card .resume-education-skill-list-container,
+.card .resume-project-skill-list-container,
+.card .resume-skill-list-container {
+  display: inline-flex;
+  gap: 4px;
+  width: fit-content;
+  margin-top: auto;
+}
+
+.card .project-list-project-skill-label > span,
+.card .resume-experience-skill-label > span,
+.card .resume-education-skill-label > span,
+.card .resume-project-skill-label > span,
+.card .resume-skill-label > span {
+  margin-left: 4px;
+}
+
+.card h5 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e1ca99;
+}
+
+.card .resume-experience-description,
+.card .resume-education-description,
+.card .resume-project-description {
+  min-height: min-content;
+  max-height: 150px;
+  overflow: auto;
+  scrollbar-width: none;
+  text-align: justify;
+  margin: 20px 0px;
+  align-content: center;
+  width: 80%;
+  flex: 1;
+}
+
+.card .project-list-project-description {
+  min-height: 35%;
+  max-height: 150px;
+  flex: 1;
+  overflow: auto;
+  scrollbar-width: none;
+  text-align: justify;
+  width: 80%;
+  margin: 20px 0;
+  align-content: center;
+}
+
+.card .resume-header-location-content,
+.card .resume-header-link-content,
+.card .resume-header-link-content a,
+.card .resume-header-contract-type,
+.card .resume-header-work-type-container,
+.card .resume-header-work-type-label,
+.card .resume-header-expected-content,
+.card .resume-header-expected-label,
+.card .resume-header-language-container,
+.card .resume-header-language-label,
+.card .resume-experience-country-content,
+.card .resume-experience-company-dates,
+.card .resume-education-country-content,
+.card .resume-education-school-dates {
+  width: 100%;
+  display: inline-flex;
+  gap: 4px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.card .resume-header-location .icon,
+.card .resume-header-expected-label .icon,
+.card .resume-header-language .icon,
+.card .resume-experience-country-content .icon,
+.card .resume-education-country-content .icon {
+  border-radius: 50%;
+  align-self: center;
+}
+
+.card .resume-header-link-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .project-list-project-content {
+  height: 100%;
+}

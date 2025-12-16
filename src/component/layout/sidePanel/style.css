@@ -1,0 +1,52 @@
+.sidePanel {
+  display: grid;
+  grid-area: sidePanel;
+  grid-template-rows: 2fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'informations'
+    '.'
+    'menu'
+    'footer';
+  background-color: rgb(158, 156, 156);
+  color: black;
+  padding: 15%;
+}
+
+.informations {
+  grid-area: 'informations';
+  margin: 20px;
+}
+
+.informations > h1 {
+  font-weight: bolder;
+  font-size: 3rem;
+  line-height: 2em;
+  color: #e1ca99;
+}
+
+.informations > h2 {
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1em;
+}
+
+.informations > h2 > sup {
+  margin-left: -10px;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.informations > h2 > sup > span {
+  color: #e1ca99;
+  font-weight: bold;
+}
+
+.informations span {
+  font-weight: lighter;
+  font-size: 0.8rem;
+}
+
+.informations .titles {
+  display: flex;
+  flex-direction: column;
+}

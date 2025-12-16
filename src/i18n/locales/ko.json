@@ -1,0 +1,50 @@
+{
+  "header": {
+    "pronounciation": "악셀 발도키",
+    "title": "백엔드 개발자<br />풀스택 개발자"
+  },
+  "menu": {
+    "whoAmI": "저는 누구인가요?",
+    "whoAmISelected": "whoAmI",
+    "projects": "프로젝트",
+    "projectsSelected": "projects",
+    "cv": "이력서",
+    "cvSelected": "resume"
+  },
+  "body": {
+    "projects": "프로젝트"
+  },
+  "misc": {
+    "projectType": {
+      "workProject": "업무 프로젝트",
+      "schoolProject": "학교 프로젝트",
+      "sideProject": "사이드 프로젝트"
+    }
+  },
+  "introduction": {
+    "selfIntroduction": {
+      "title": "저는누구인가요",
+      "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
+    },
+    "journey": {
+      "title": "내여정",
+      "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
+    },
+    "motivation": {
+      "title": "저를동기부여하는것",
+      "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
+    },
+    "lookingFor": {
+      "title": "제가찾고있는것",
+      "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
+    },
+    "passion": {
+      "title": "나를열정적으로만드는것",
+      "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
+    },
+    "mentions": {
+      "title": "특별한영예",
+      "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
+    }
+  }
+}

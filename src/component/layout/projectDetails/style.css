@@ -1,0 +1,163 @@
+.project-details-container {
+  height: 100vh;
+}
+
+.project-details {
+  height: 100%;
+  align-content: center;
+}
+
+.project-details.is-loading {
+  text-align: center;
+}
+
+.return {
+  margin: 20px 40px 0px 40px;
+}
+
+.return .icon {
+  cursor: pointer;
+}
+
+.project-details span {
+  color: #e1ca99;
+}
+
+.details {
+  margin: 0px 40px 40px 40px;
+  background-color: rgb(12, 12, 12);
+  padding: 40px;
+  border-radius: 10px;
+  border: 2px solid rgb(24, 24, 24);
+  opacity: 0;
+  transform: translateX(40px);
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.details .icon {
+  align-self: center;
+}
+
+.details.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.project-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  gap: 8px;
+}
+
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+}
+
+.project-tag > p {
+  width: max-content;
+}
+
+.project-technology-container {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.project-technology-container > p {
+  width: max-content;
+}
+
+.project-technology {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.project-title-status-container {
+  width: max-content;
+}
+
+.project-title-status-container > h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #e1ca99;
+}
+
+.project-status {
+  font-weight: normal;
+  font-size: 1rem;
+  color: white;
+  margin-left: 8px;
+}
+
+.project-company-school-container {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.project-company-school {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.project-link-container .company,
+.project-link-container .school {
+  color: white;
+  font-weight: bold;
+}
+
+.project-skills-container {
+  margin-top: 20px;
+}
+
+.project-skills-container > h4 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #e1ca99;
+}
+
+.project-skill-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-skill {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  margin-right: 4px;
+  margin-bottom: 20px;
+}
+
+.project-skill span {
+  margin-left: 4px;
+}
+
+.project-description-container {
+  height: auto;
+  max-height: 60vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  margin-top: 20px;
+}
+
+.project-description-container::-webkit-scrollbar {
+  display: none; /* pour Chrome/Safari */
+}
+
+.project-description {
+  text-align: justify;
+}
+
+.project-link-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: right;
+}
+
+.project-link {
+  display: inline-flex;
+  gap: 4px;
+}

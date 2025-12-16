@@ -1,0 +1,7 @@
+.body {
+  display: grid;
+  grid-area: body;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}

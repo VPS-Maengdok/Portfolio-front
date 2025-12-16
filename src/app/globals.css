@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -22,5 +22,55 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Menlo;
+  font-weight: bold;
+}
+
+p,
+div,
+span {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+p,
+div {
+  font-size: 1rem;
+}
+
+span {
+  color: #e1ca99;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+  color: #e1ca99;
+}
+
+h6 {
+  font-size: 1.2rem;
+  color: #e1ca99;
 }

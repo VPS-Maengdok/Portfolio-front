@@ -1,0 +1,14 @@
+.footer {
+  display: inline-flex;
+  justify-self: center;
+  justify-content: space-between;
+  grid-area: footer;
+  height: 100px;
+  width: max-content;
+  gap: 50px;
+  bottom: 120px;
+}
+
+.footer div {
+  align-self: end;
+}
