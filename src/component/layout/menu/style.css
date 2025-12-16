@@ -5,17 +5,37 @@
 .menu > h2 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: grey;
+  color: #c2d4dc;
   height: fit-content;
   width: fit-content;
   cursor: pointer;
 }
 
-.menu > h2:hover,
-.menu > .selected {
-  color: black;
+.menu > h2 span {
+  color: inherit;
 }
 
-.menu > .selected > span {
+.menu > h2:hover,
+.menu > .selected {
+  color: #060606;
+}
+
+.menu .left-bracket.selected,
+.menu .right-bracket.selected,
+.menu .sep.selected,
+.menu .functionStart,
+.menu .functionEnd {
   color: #e1ca99;
+}
+
+.menu .left-bracket {
+  margin-right: 4px;
+}
+
+.menu .right-bracket {
+  margin-left: 4px;
+}
+
+.menu .sep {
+  margin: 0 14px;
 }

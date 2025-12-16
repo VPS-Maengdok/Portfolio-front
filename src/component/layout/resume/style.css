@@ -27,6 +27,10 @@
   scrollbar-width: none;
 }
 
+.resume-container.is-loading {
+  text-align: center;
+}
+
 .resume-header h3 {
   font-size: 1.8rem;
   text-align: center;

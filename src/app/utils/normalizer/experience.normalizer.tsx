@@ -4,8 +4,9 @@ import { normalizeSkills } from './skill.normalizer';
 import { normalizeTechnologies } from './technology.normalizer';
 import { normalizeCountry } from './country.normalizer';
 import { TranslateFn } from '@/types/i18n/translate.type';
+import { normalizeDate } from './date.normalizer';
 
-export const normalizeExperiences = (
+export const normalizeExperience = (
   experience: Experience,
   t: TranslateFn,
   className: string,
@@ -44,12 +45,16 @@ export const normalizeExperiences = (
               <span>{'|'}</span>
 
               <div className={`${className}-company-dates`}>
-                <p>{experience.startingDate}</p>
+                <p>{normalizeDate(experience.startingDate)}</p>
                 <span> {'->'} </span>
                 {experience.isCurrentWork ? (
                   <p>{t('resume.experience.actualWork')}</p>
                 ) : (
-                  <p>{experience.endingDate}</p>
+                  <p>
+                    {experience.endingDate
+                      ? normalizeDate(experience.endingDate)
+                      : undefined}
+                  </p>
                 )}
               </div>
             </div>

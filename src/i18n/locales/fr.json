@@ -70,10 +70,18 @@
     }
   },
   "projects": {
-    "title": "projets"
+    "title": "projets",
+    "loading": "Récupération de la liste des projets...",
+    "empty": "Il semblerait que la traduction ne soit pas encore prête... Passez sur une autre langue ou revenez plus tard."
+  },
+  "projectDetails": {
+    "loading": "Récupération des données du projet...",
+    "empty": "Il semblerait que la traduction ne soit pas encore prête... Passez sur une autre langue ou revenez plus tard."
   },
   "resume": {
     "title": "curriculumVitae",
+    "loading": "Récupération des données du Curriculum...",
+    "empty": "Il semblerait que la traduction ne soit pas encore prête... Passez sur une autre langue ou revenez plus tard.",
     "hasVisa": "Visa hors EU requis",
     "pdfPreparation": "Préparation du PDF...",
     "contract": {

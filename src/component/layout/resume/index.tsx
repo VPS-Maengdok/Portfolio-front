@@ -5,9 +5,9 @@ import { useRef, useState, useEffect, useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Curriculum } from '@/types/api/curriculum.type';
 import { getFirstCurriculum, getPDFBlob } from '@/service/api/curriculum.api';
-import { normalizeExperiences } from '@/app/utils/normalizer/experience.normalizer';
-import { normalizeEducations } from '@/app/utils/normalizer/education.normalizer';
-import { normalizeProjects } from '@/app/utils/normalizer/project.normalizer';
+import { normalizeExperience } from '@/app/utils/normalizer/experience.normalizer';
+import { normalizeEducation } from '@/app/utils/normalizer/education.normalizer';
+import { normalizeProject } from '@/app/utils/normalizer/project.normalizer';
 import { normalizeTechnologies } from '@/app/utils/normalizer/technology.normalizer';
 import { normalizeSkills } from '@/app/utils/normalizer/skill.normalizer';
 import {
@@ -124,10 +124,10 @@ export default function Resume(props: ResumeProps) {
 
   if (isLoading) {
     return (
-      <div className="resume">
+      <div className={`${className}`}>
         <h2>{normalizeTitle(t, 'resume.title')}</h2>
-        <div className="resume-container is-loading">
-          <p>Resume is loading...</p>
+        <div className={`${className}-container is-loading`}>
+          <p>{t('resume.loading')}</p>
         </div>
       </div>
     );
@@ -135,13 +135,10 @@ export default function Resume(props: ResumeProps) {
 
   if (!data) {
     return (
-      <div className="resume">
+      <div className={`${className}`}>
         <h2>{normalizeTitle(t, 'resume.title')}</h2>
-        <div className="resume-container is-loading">
-          <p>
-            Sorry! The translation is probably not ready yet... Change the
-            language or come back later.
-          </p>
+        <div className={`${className}-container is-loading`}>
+          <p>{t('resume.empty')}</p>
         </div>
       </div>
     );
@@ -177,8 +174,8 @@ export default function Resume(props: ResumeProps) {
   };
 
   return (
-    <div className="resume">
-      <div className="resume-title">
+    <div className={`${className}`}>
+      <div className={`${className}-title`}>
         <h2>{normalizeTitle(t, 'resume.title')}</h2>
         <Icon
           name={`DownloadIcon` as IconName}
@@ -189,9 +186,9 @@ export default function Resume(props: ResumeProps) {
         />
       </div>
 
-      <div className="resume-container">
+      <div className={`${className}-container`}>
         <div>
-          <div className="resume-header" ref={headerContainerRef}>
+          <div className={`${className}-header`} ref={headerContainerRef}>
             <Card
               className={`${className}-header`}
               normalizer={normalizeHeader(
@@ -205,7 +202,10 @@ export default function Resume(props: ResumeProps) {
             />
           </div>
 
-          <div className={`resume-experience`} ref={experienceContainerRef}>
+          <div
+            className={`${className}-experience`}
+            ref={experienceContainerRef}
+          >
             <h4>
               {normalizeSubtitle(t, 'resume.title', 'resume.experience.title')}
             </h4>
@@ -214,7 +214,7 @@ export default function Resume(props: ResumeProps) {
                 <Card
                   key={experience.id}
                   className={`${className}-experience`}
-                  normalizer={normalizeExperiences(
+                  normalizer={normalizeExperience(
                     experience,
                     t,
                     `${className}-experience`,
@@ -225,7 +225,7 @@ export default function Resume(props: ResumeProps) {
               ))}
           </div>
 
-          <div className="resume-education" ref={educationContainerRef}>
+          <div className={`${className}-education`} ref={educationContainerRef}>
             <h4>
               {normalizeSubtitle(t, 'resume.title', 'resume.education.title')}
             </h4>
@@ -234,7 +234,7 @@ export default function Resume(props: ResumeProps) {
                 <Card
                   key={education.id}
                   className={`${className}-education`}
-                  normalizer={normalizeEducations(
+                  normalizer={normalizeEducation(
                     education,
                     `${className}-education`,
                   )}
@@ -244,7 +244,7 @@ export default function Resume(props: ResumeProps) {
               ))}
           </div>
 
-          <div className="resume-project" ref={projectContainerRef}>
+          <div className={`${className}-project`} ref={projectContainerRef}>
             <h4>
               {normalizeSubtitle(t, 'resume.title', 'resume.project.title')}
             </h4>
@@ -253,7 +253,7 @@ export default function Resume(props: ResumeProps) {
                 <Card
                   key={project.id}
                   className={`${className}-project clickable`}
-                  normalizer={normalizeProjects(
+                  normalizer={normalizeProject(
                     project,
                     t,
                     `${className}-project`,
@@ -265,7 +265,10 @@ export default function Resume(props: ResumeProps) {
               ))}
           </div>
 
-          <div className="resume-technology" ref={technologyContainerRef}>
+          <div
+            className={`${className}-technology`}
+            ref={technologyContainerRef}
+          >
             <h4>
               {normalizeSubtitle(t, 'resume.title', 'resume.technology.title')}
             </h4>
@@ -279,7 +282,7 @@ export default function Resume(props: ResumeProps) {
             />
           </div>
 
-          <div className="resume-skill" ref={skillContainerRef}>
+          <div className={`${className}-skill`} ref={skillContainerRef}>
             <h4>
               {normalizeSubtitle(t, 'resume.title', 'resume.skill.title')}
             </h4>

@@ -4,10 +4,37 @@ import { useI18n } from '@/i18n/i18nContext';
 import { MenuItems } from '@/types/layout/menu.type';
 
 import './style.css';
+import { TranslateFn } from '@/types/i18n/translate.type';
+import { JSX } from 'react';
 
 type MenuProps = {
   selected: MenuItems;
   onSelect: (key: MenuItems) => void;
+};
+
+const formatTitle = (
+  t: TranslateFn,
+  translation: string,
+  index: number,
+  isSelected: boolean = false,
+): JSX.Element => {
+  return (
+    <>
+      <span className={`left-bracket ${isSelected ? 'selected' : ''}`}>[</span>
+      <span className="index">{index}</span>
+      <span className={`right-bracket ${isSelected ? 'selected' : ''}`}>]</span>
+      <span className={`sep ${isSelected ? 'selected' : ''}`}>{'=>'}</span>
+      {isSelected ? (
+        <>
+          <span className="functionStart">{'$'}</span>
+          <span className="text">{t(translation)}</span>
+          <span className="functionEnd">{'();'}</span>
+        </>
+      ) : (
+        <span className="text">{t(translation)}</span>
+      )}
+    </>
+  );
 };
 
 export default function Menu(props: MenuProps) {
@@ -22,13 +49,9 @@ export default function Menu(props: MenuProps) {
         }}
       >
         {props.selected === 'me' ? (
-          <>
-            01 - <span>{'$'}</span>
-            {t('menu.whoAmISelected')}
-            <span>{'();'}</span>
-          </>
+          <>{formatTitle(t, 'menu.whoAmISelected', 0, true)}</>
         ) : (
-          `01 - ${t('menu.whoAmI')}`
+          <>{formatTitle(t, 'menu.whoAmI', 0)}</>
         )}
       </h2>
       <h2
@@ -38,13 +61,9 @@ export default function Menu(props: MenuProps) {
         }}
       >
         {props.selected === 'projects' ? (
-          <>
-            02 - <span>{'$'}</span>
-            {t('menu.projectsSelected')}
-            <span>{'();'}</span>
-          </>
+          <>{formatTitle(t, 'menu.projectsSelected', 1, true)}</>
         ) : (
-          `02 - ${t('menu.projects')}`
+          <>{formatTitle(t, 'menu.projects', 1)}</>
         )}
       </h2>
       <h2
@@ -54,13 +73,9 @@ export default function Menu(props: MenuProps) {
         }}
       >
         {props.selected === 'cv' ? (
-          <>
-            03 - <span>{'$'}</span>
-            {t('menu.cvSelected')}
-            <span>{'();'}</span>
-          </>
+          <>{formatTitle(t, 'menu.cvSelected', 2, true)}</>
         ) : (
-          `03 - ${t('menu.cv')}`
+          <>{formatTitle(t, 'menu.cv', 2)}</>
         )}
       </h2>
     </div>

@@ -24,34 +24,64 @@
   "introduction": {
     "selfIntroduction": {
       "title": "whoAmI",
-      "description": ["<p>Work in progress, will be translated soon."]
+      "description": [
+        "<p>Passionate French developer with a <strong>strong ability to learn</strong> and <strong>adapt</strong>. Always eager to acquire new knowledge, I place great importance on <strong>optimization</strong>: <strong>refactoring</strong>, <strong>process improvement</strong>, and <strong>clear step-by-step decomposition</strong> required to accomplish a task.</p>",
+        "<p>I consistently strive to <strong>deeply understand</strong> what I am doing. Before taking action, I analyze the available options to identify the <strong>most relevant</strong> and <strong>most efficient</strong> approach.</p>",
+        "<p>I have a strong affinity for <strong>Back-End development</strong> due to its logical nature, a field in which I feel completely at ease.</p>"
+      ]
     },
     "journey": {
       "title": "myJourney",
-      "description": ["<p>Work in progress, will be translated soon."]
+      "description": [
+        "<p>I discovered software development during the early days of online forums and the rise of Minecraft. By creating my first <strong>forums</strong> and configuring <strong>Minecraft servers</strong>, I found my first true passion for programming. This interest was confirmed in high school when I discovered the <strong>C programming language</strong>, which naturally led me to join <strong>Epitech Paris</strong> to pursue studies in computer science.</p>",
+        "<p>Due to financial constraints, I was unable to complete this academic path. I therefore decided to focus on my second passion: <strong>foreign languages</strong>, and more specifically <strong>Asian languages</strong>. I studied <strong>Korean</strong> with the long-term goal of working in South Korea as a developer.</p>",
+        "<p>After earning a <strong>Bachelor’s degree in Korean</strong> from the <strong>UFR LCAO</strong> at <strong>Université Paris Cité</strong>, I returned to my original career path and trained as a <strong>Full Stack Developer</strong>, while also obtaining an <strong>MBA in Web and Digital Project Management</strong>. Through my <strong>apprenticeship</strong> at <strong>BETC</strong>, I was able to significantly deepen my development skills and gain a comprehensive understanding of the field, supported by a <strong>high-quality IT team</strong>, particularly the Lead Developer and Senior Developer, whose guidance was instrumental.</p>"
+      ]
     },
     "motivation": {
-      "title": "whatMotivatesMe",
-      "description": ["<p>Work in progress, will be translated soon."]
+      "title": "whatDrivesMe",
+      "description": [
+        "<p>Although it can be comfortable to stay within my comfort zone, I actively seek situations that push me beyond it. I enjoy taking on <strong>challenges</strong>, whether it means traveling alone to the other side of the world to discover a <strong>new culture</strong> and learn a <strong>new language</strong>, or starting web projects using a <strong>programming language</strong> that is new to me in order to broaden my skill set and strengthen existing ones.</p>",
+        "<p>I need to be <strong>intellectually stimulated</strong> to stay motivated and avoid any form of monotony.</p>"
+      ]
     },
     "lookingFor": {
       "title": "whatImLookingFor",
-      "description": ["<p>Work in progress, will be translated soon."]
+      "description": [
+        "<p>My ambition is to <strong>continuously grow</strong> while remaining <strong>intellectually challenged</strong> through diverse projects. I particularly enjoy being exposed to <strong>new languages</strong> and <strong>new cultures</strong>, which is why I am open to professional opportunities in Asia (<span>South Korea</span>, <span>Japan</span>, <span>Vietnam</span>, <span>China</span>).</p>",
+        "<p>Versatile by nature, I enjoy working on <strong>diverse projects</strong> that allow me to explore different aspects of development. While my preference clearly lies in <strong>Back-End development</strong> (<strong>Symfony</strong>, <strong>Django</strong>), I am equally comfortable in a dedicated back-end role or a <strong>Full Stack</strong> position.</p>"
+      ]
     },
     "passion": {
-      "title": "whatPassionatesMe",
-      "description": ["<p>Work in progress, will be translated soon."]
+      "title": "whatImPassionateAbout",
+      "description": [
+        "<p>I have several passions: <strong>video games</strong>, <strong>Asia</strong> with its languages, history, and cultures, <strong>software development</strong>, and <strong>animals</strong>.</p>",
+        "<p>In the world of video games, I have a particular affinity for <strong>MMORPGs</strong>. I enjoy the sense of continuous progression they offer, whether it involves optimizing rotations as a <span>DPS</span> or <span>healer</span>, or improving gear to remain competitive. Starting a new MMORPG is, for me, the ideal opportunity to discover a universe alongside other players, while working on the most suitable <span>build</span> for my playstyle to stay near the top of the <span>DPS meter</span>. I also appreciate the strategic depth of <strong>dungeons</strong>, <strong>raids</strong>, and <strong>world bosses</strong>, which require both learning and strong coordination.</p>",
+        "<p>My passion for Asia dates back to childhood. I was fascinated by <strong>calligraphy</strong>, <strong>mythology</strong>, and the distinctive aesthetics of these cultures. Over time, this curiosity deepened and led me to pursue a <strong>Bachelor’s degree in Korean</strong>, during which I studied not only the language, but also the <span>history</span>, <span>culture</span>, <span>anthropology</span>, and <span>politics</span> of Korea. My travels are primarily focused on Asia, and I intend to continue exploring this region as long as my desire to learn remains unfulfilled—even if it means returning to the same country multiple times.</p>",
+        "<p>Finally, my sensitivity toward <span>animals</span> has been with me since childhood. I once aspired to become a zoologist, but an internship with a veterinarian <span>—</span> during which I observed a surgical procedure <span>—</span> led me to reconsider that path. I nevertheless maintain a deep respect for professions related to animal care. These are essential roles that require particular attention to these majestic beings, whom it is <span>important to protect and care for</span>.</p>"
+      ]
     },
     "mentions": {
-      "title": "specialHonours",
-      "description": ["<p>Work in progress, will be translated soon."]
+      "title": "specialThanks",
+      "description": [
+        "<p>I would like to express my sincere gratitude to everyone who has provided support, kindness, or positive influence throughout my journey—whether in my life project, my learning process, or through meaningful collaborations:</p>",
+        "<ul><li><span>-></span> Idris C.</li><li><span>-></span> Nirund P.</li><li><span>-></span> David R.</li><li><span>-></span> Abder Z.</li><li><span>-></span> Yann C.-T.</li><li><span>-></span> Rémi R.</li><li><span>-></span> David P.</li><li><span>-></span> Hiren P.</li></ul>"
+      ]
     }
   },
   "projects": {
-    "title": "projects"
+    "title": "projects",
+    "loading": "Fetching project list data...",
+    "empty": "Looks like the translation is not ready yet... Please, change the language or come back later."
+  },
+  "projectDetails": {
+    "loading": "Fetching project's data...",
+    "empty": "Looks like the translation is not ready yet... Please, change the language or come back later."
   },
   "resume": {
     "title": "resume",
+    "loading": "Fetching resume's data...",
+    "empty": "Looks like the translation is not ready yet... Please, change the language or come back later.",
     "hasVisa": "Non-EU visa required",
     "pdfPreparation": "Preparing the PDF...",
     "contract": {

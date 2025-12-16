@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Project } from '@/types/api/project.type';
 import { getProjects } from '@/service/api/project.api';
 import Card from '@/component/ui/card';
-import { normalizeProjects } from '@/app/utils/normalizer/project.normalizer';
+import { normalizeProject } from '@/app/utils/normalizer/project.normalizer';
 import { useI18n } from '@/i18n/i18nContext';
 import { useVisibilityObserver } from '@/app/utils/observer/visibility.observer';
 import { normalizeTitle } from '@/app/utils/normalizer/title.normalizer';
@@ -60,7 +60,7 @@ export default function ProjectList(props: ProjectListProps) {
       <div className={`${className}`}>
         <h2>{normalizeTitle(t, 'projects.title')}</h2>
         <div className={`${className}-container is-loading`}>
-          <p>Project list is loading...</p>
+          <p>{t('projects.loading')}</p>
         </div>
       </div>
     );
@@ -71,10 +71,7 @@ export default function ProjectList(props: ProjectListProps) {
       <div className={`${className}`}>
         <h2>{normalizeTitle(t, 'projects.title')}</h2>
         <div className={`${className}-container is-loading`}>
-          <p>
-            Sorry! The translation is probably not ready yet... Change the
-            language or come back later.
-          </p>
+          <p>{t('projects.empty')}</p>
         </div>
       </div>
     );
@@ -88,7 +85,7 @@ export default function ProjectList(props: ProjectListProps) {
           <Card
             key={project.id}
             className={`${className}-project clickable`}
-            normalizer={normalizeProjects(
+            normalizer={normalizeProject(
               project,
               t,
               `${className}-project`,

@@ -76,7 +76,7 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
           />
         </div>
         <div className="project-details is-loading">
-          Project Details is loading...
+          <p>{t('projectDetails.loading')}</p>
         </div>
       </div>
     );
@@ -119,7 +119,7 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
           name="ArrowLeftIcon"
           className={`icon arrow-return`}
           size={24}
-          color="#e1ca99"
+          fill="#e1ca99"
         />
       </div>
       <div className="project-details">

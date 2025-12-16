@@ -7,8 +7,7 @@
     '.'
     'menu'
     'footer';
-  background-color: rgb(158, 156, 156);
-  color: black;
+  background-color: #293857;
   padding: 15%;
 }
 
@@ -21,13 +20,13 @@
   font-weight: bolder;
   font-size: 3rem;
   line-height: 2em;
-  color: #e1ca99;
 }
 
 .informations > h2 {
   font-weight: bold;
   font-size: 1.4rem;
   line-height: 1em;
+  color: #060606;
 }
 
 .informations > h2 > sup {
@@ -37,12 +36,12 @@
 }
 
 .informations > h2 > sup > span {
-  color: #e1ca99;
   font-weight: bold;
 }
 
 .informations span {
   font-weight: lighter;
+
   font-size: 0.8rem;
 }
 

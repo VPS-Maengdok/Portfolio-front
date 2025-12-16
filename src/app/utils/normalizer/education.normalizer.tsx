@@ -3,11 +3,9 @@ import { normalizeTranslations } from './translation.normalizer';
 import { normalizeSkills } from './skill.normalizer';
 import { normalizeTechnologies } from './technology.normalizer';
 import { normalizeCountry } from './country.normalizer';
+import { normalizeDate } from './date.normalizer';
 
-export const normalizeEducations = (
-  education: Education,
-  className: string,
-) => {
+export const normalizeEducation = (education: Education, className: string) => {
   return (
     <div className={`${className}-container`}>
       {normalizeTranslations<EducationI18n>(education.i18n).map((i18n) => (
@@ -45,9 +43,13 @@ export const normalizeEducations = (
               <span>{'|'}</span>
 
               <div className={`${className}-school-dates`}>
-                <p>{education.startingDate}</p>
+                <p>{normalizeDate(education.startingDate)}</p>
                 <span>{'->'}</span>
-                <p>{education.endingDate}</p>
+                <p>
+                  {education.endingDate
+                    ? normalizeDate(education.endingDate)
+                    : undefined}
+                </p>
               </div>
             </div>
           )}

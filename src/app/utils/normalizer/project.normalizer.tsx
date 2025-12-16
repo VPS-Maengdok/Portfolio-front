@@ -4,7 +4,7 @@ import { normalizeTechnologies } from './technology.normalizer';
 import { TranslateFn } from '@/types/i18n/translate.type';
 import { normalizeSkills } from './skill.normalizer';
 
-export const normalizeProjects = (
+export const normalizeProject = (
   project: Project,
   t: TranslateFn,
   className: string,

@@ -1,7 +1,7 @@
 {
   "header": {
     "pronounciation": "악셀 발도키",
-    "title": "백엔드 개발자<br />풀스택 개발자"
+    "title": ["백엔드 개발자", "풀스택 개발자"]
   },
   "menu": {
     "whoAmI": "저는 누구인가요?",
@@ -45,6 +45,60 @@
     "mentions": {
       "title": "특별한영예",
       "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
+    }
+  },
+  "projects": {
+    "title": "프로젝트",
+    "loading": "Fetching project list data...",
+    "empty": "현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"
+  },
+  "projectDetails": {
+    "loading": "Fetching project's data...",
+    "empty": "현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"
+  },
+  "resume": {
+    "title": "이력서",
+    "loading": "Fetching resume's data...",
+    "empty": "현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다",
+    "hasVisa": "Non-EU visa required",
+    "pdfPreparation": "Preparing the PDF...",
+    "contract": {
+      "type": ["Long term"],
+      "description": "Contract type:"
+    },
+    "freelance": {
+      "true": "Freelance"
+    },
+    "experience": {
+      "title": "workExperiences",
+      "actualWork": "Actual work"
+    },
+    "education": {
+      "title": "education"
+    },
+    "project": {
+      "title": "projects"
+    },
+    "technology": {
+      "title": "technologies"
+    },
+    "skill": {
+      "title": "skills"
+    },
+    "link": {
+      "title": "links"
+    },
+    "expectedCountry": {
+      "description": "Willing to work from:"
+    },
+    "visaAvailableFor": {
+      "description": "Visa available for:"
+    },
+    "language": {
+      "description": "Languagues:"
+    },
+    "workType": {
+      "description": "work Type:"
     }
   }
 }

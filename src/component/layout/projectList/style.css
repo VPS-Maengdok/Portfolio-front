@@ -17,3 +17,7 @@
   scrollbar-width: none;
   height: 100%;
 }
+
+.project-list-container.is-loading {
+  text-align: center;
+}

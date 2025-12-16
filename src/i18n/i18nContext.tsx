@@ -17,7 +17,7 @@ type I18nContextValue = {
 
 const I18nContext = createContext<I18nContextValue | undefined>(undefined);
 
-function computeClientLocale(): LocaleType {
+export function computeClientLocale(): LocaleType {
   if (typeof window === 'undefined') return 'fr';
 
   const stored = window.localStorage.getItem('locale');

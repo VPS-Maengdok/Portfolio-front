@@ -3,10 +3,10 @@
   transform: translateX(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   will-change: opacity, transform;
-  background-color: rgb(12, 12, 12);
+  background-color: #080808;
   padding: 40px;
   border-radius: 10px;
-  border: 2px solid rgb(24, 24, 24);
+  border: 2px solid #181818;
   overflow: hidden;
   width: 100%;
   margin-bottom: 20px;
