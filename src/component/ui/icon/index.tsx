@@ -1,4 +1,4 @@
-import { icons } from '@/app/assets/icons/icon';
+import { icons } from '@/app/assets/icons/icons';
 import { FC } from 'react';
 
 export type IconName = keyof typeof icons;
