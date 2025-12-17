@@ -82,9 +82,27 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
     );
   }
 
-  const type = data?.company
+  if (!data) {
+    return (
+      <div className="project-details-container">
+        <div className="return" onClick={() => handleOnClickReturn()}>
+          <Icon
+            name="ArrowLeftIcon"
+            className="icon arrow-return"
+            size={24}
+            fill="#e1ca99"
+          />
+        </div>
+        <div className="project-details is-loading">
+          <p>{t('projectDetails.empty')}</p>
+        </div>
+      </div>
+    );
+  }
+
+  const type = data.company
     ? t('misc.projectType.workProject')
-    : data?.school
+    : data.school
     ? t('misc.projectType.schoolProject')
     : t('misc.projectType.sideProject');
 
