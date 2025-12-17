@@ -100,6 +100,11 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
     );
   }
 
+  const projectI18n =
+    Array.isArray(data.i18n) && data.i18n.length > 0
+      ? data.i18n[0]
+      : data.i18n;
+
   const type = data.company
     ? t('misc.projectType.workProject')
     : data.school
@@ -177,7 +182,7 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
 
           <div className="project-title-status-container">
             <h3>
-              {data.i18n.label}
+              {projectI18n.label}
               {data.status && (
                 <sup
                   key={`${data.status.id}-${data.status.i18n.locale.id}`}
@@ -216,7 +221,7 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
           <div className="project-description-container">
             <div
               className="project-description"
-              dangerouslySetInnerHTML={{ __html: data.i18n.description }}
+              dangerouslySetInnerHTML={{ __html: projectI18n.description }}
             />
           </div>
           <div className="project-skills-container">
