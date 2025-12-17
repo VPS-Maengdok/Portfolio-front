@@ -1,10 +1,11 @@
+import { IconName } from '@/component/ui/icon';
 import { Curriculum } from './curriculum.type';
 import { Locale } from './locale.type';
 import { Project } from './project.type';
 
 export type Link = {
   id: number;
-  icon: string;
+  icon: IconName;
   isProject: boolean;
   url: string | null;
   repositoryUrl: string | null;
@@ -21,7 +22,7 @@ export type LinkI18n = {
 
 export type LinkForm = {
   id?: number;
-  icon: string;
+  icon: IconName;
   isProject: boolean;
   url?: string;
   repositoryUrl?: string;
