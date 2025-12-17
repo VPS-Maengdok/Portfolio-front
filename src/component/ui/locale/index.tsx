@@ -1,11 +1,10 @@
-import { getLocales } from '@/service/api/locale.api';
 import Icon, { IconName } from '@/component/ui/icon';
-import { Locale as L, Locale } from '@/types/api/locale.type';
+import { useI18n } from '@/i18n/i18nContext';
+import { getLocales } from '@/service/api/locale.api';
+import { Locale as L } from '@/types/api/locale.type';
+import { LocaleType } from '@/types/i18n/locale.type';
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
-import { LocaleType } from '@/types/i18n/locale.type';
-import { useI18n } from '@/i18n/i18nContext';
-
 import './style.css';
 
 export default function Locale() {
@@ -13,7 +12,7 @@ export default function Locale() {
   const [openLanguageDisplay, setOpenLanguageDisplay] =
     useState<boolean>(false);
 
-  const { data, error, isLoading } = useQuery<L>({
+  const { data, isLoading } = useQuery<L>({
     queryKey: ['locales'],
     queryFn: () => getLocales(),
     enabled: true,
@@ -67,7 +66,7 @@ export default function Locale() {
 
           {openLanguageDisplay && (
             <div className="locale-list">
-              {orderedLocales.map((l: Locale) => (
+              {orderedLocales.map((l: L) => (
                 <Icon
                   key={l.id}
                   className={`locale-icon ${

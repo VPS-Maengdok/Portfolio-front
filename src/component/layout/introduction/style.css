@@ -3,6 +3,9 @@
   margin: 2.5em;
   overflow: hidden;
   row-gap: 2em;
+  height: calc(100vh - 5em);
+  grid-template-rows: auto 1fr;
+  min-height: 0;
 }
 
 .introduction > h2 {
@@ -28,6 +31,9 @@
 .introduction .container {
   display: grid;
   overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  min-height: 0;
 }
 
 .journey-container,
@@ -66,4 +72,25 @@
 .mentions-description.is-visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+@media (max-width: 1130px) {
+  .introduction {
+    margin: 1.5rem;
+    height: calc(100vh - 4rem);
+  }
+
+  .introduction-description,
+  .journey-description,
+  .motivation-description,
+  .lookingfor-description,
+  .passion-description,
+  .mentions-description {
+    padding: 20px;
+  }
+
+  .introduction .container {
+    padding-bottom: 3rem;
+    -webkit-overflow-scrolling: touch;
+  }
 }

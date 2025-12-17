@@ -1,7 +1,9 @@
 'use client';
 
-import { getProject } from '@/service/api/project.api';
 import { normalizeTranslations } from '@/app/utils/normalizer/translation.normalizer';
+import Icon, { IconName } from '@/component/ui/icon';
+import { useI18n } from '@/i18n/i18nContext';
+import { getProject } from '@/service/api/project.api';
 import { Link, LinkI18n } from '@/types/api/link.type';
 import { Project } from '@/types/api/project.type';
 import { Skill, SkillI18n } from '@/types/api/skill.type';
@@ -9,9 +11,6 @@ import { Tag, TagI18n } from '@/types/api/tag.type';
 import { Technology } from '@/types/api/technology.type';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useRef, useState } from 'react';
-import Icon, { IconName } from '@/component/ui/icon';
-import { useI18n } from '@/i18n/i18nContext';
-
 import './style.css';
 
 type ProjectDetailsProps = {
@@ -73,6 +72,7 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
             name="ArrowLeftIcon"
             className={`icon arrow-return`}
             size={24}
+            fill="#e1ca99"
           />
         </div>
         <div className="project-details is-loading">
@@ -117,7 +117,7 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
       <div className="return" onClick={() => handleOnClickReturn()}>
         <Icon
           name="ArrowLeftIcon"
-          className={`icon arrow-return`}
+          className="icon arrow-return"
           size={24}
           fill="#e1ca99"
         />

@@ -1,11 +1,15 @@
 import { Education, EducationI18n } from '@/types/api/education.type';
-import { normalizeTranslations } from './translation.normalizer';
-import { normalizeSkills } from './skill.normalizer';
-import { normalizeTechnologies } from './technology.normalizer';
 import { normalizeCountry } from './country.normalizer';
 import { normalizeDate } from './date.normalizer';
+import { normalizeSkills } from './skill.normalizer';
+import { normalizeTechnologies } from './technology.normalizer';
+import { normalizeTranslations } from './translation.normalizer';
 
-export const normalizeEducation = (education: Education, className: string) => {
+export const normalizeEducation = (
+  education: Education,
+  className: string,
+  isMobileScreen: boolean = false,
+) => {
   return (
     <div className={`${className}-container`}>
       {normalizeTranslations<EducationI18n>(education.i18n).map((i18n) => (
@@ -34,22 +38,24 @@ export const normalizeEducation = (education: Education, className: string) => {
                 </a>
               </p>
 
-              <span>{'|'}</span>
-              <p>{education.school.city}, </p>
-              {normalizeCountry(
-                education.school.country,
-                `${className}-country`,
-              )}
-              <span>{'|'}</span>
+              <div className={`${className}-country-dates`}>
+                {!isMobileScreen && <span>{'|'}</span>}
+                <p>{education.school.city}, </p>
+                {normalizeCountry(
+                  education.school.country,
+                  `${className}-country`,
+                )}
+                <span>{'|'}</span>
 
-              <div className={`${className}-school-dates`}>
-                <p>{normalizeDate(education.startingDate)}</p>
-                <span>{'->'}</span>
-                <p>
-                  {education.endingDate
-                    ? normalizeDate(education.endingDate)
-                    : undefined}
-                </p>
+                <div className={`${className}-school-dates`}>
+                  <p>{normalizeDate(education.startingDate)}</p>
+                  <span>{'->'}</span>
+                  <p>
+                    {education.endingDate
+                      ? normalizeDate(education.endingDate)
+                      : undefined}
+                  </p>
+                </div>
               </div>
             </div>
           )}

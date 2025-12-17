@@ -1,5 +1,5 @@
-import { Locale } from './locale.type';
 import { Curriculum } from './curriculum.type';
+import { Locale } from './locale.type';
 
 export type Language = {
   id: number;

@@ -1,11 +1,10 @@
 'use client';
 
-import { useQuery } from '@tanstack/react-query';
-import { searchLink } from '@/service/api/link.api';
-import { Link } from '@/types/api/link.type';
 import Icon from '@/component/ui/icon';
 import Locale from '@/component/ui/locale';
-
+import { searchLink } from '@/service/api/link.api';
+import { Link } from '@/types/api/link.type';
+import { useQuery } from '@tanstack/react-query';
 import './style.css';
 
 export default function Footer() {

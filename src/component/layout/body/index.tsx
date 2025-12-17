@@ -1,12 +1,13 @@
 'use client';
 
-import ProjectList from '../projectList';
+import { useMenu, useMenuControl, useMenuVisibility } from '@/app/clientLayout';
+import { useIsMobileScreen } from '@/app/hooks/useIsMobileScreen';
+import Icon, { IconName } from '@/component/ui/icon';
 import { useEffect, useState } from 'react';
-import ProjectDetails from '../projectDetails';
-import { useMenu } from '@/app/clientLayout';
 import Introduction from '../introduction';
+import ProjectDetails from '../projectDetails';
+import ProjectList from '../projectList';
 import Resume from '../resume';
-
 import './style.css';
 
 export default function Body() {
@@ -21,8 +22,32 @@ export default function Body() {
     return () => window.removeEventListener('menu-change', handleMenuChange);
   }, []);
 
+  const isMobileScreen = useIsMobileScreen();
+
+  const setOpenMenu = useMenuControl();
+  const isMenuOpen = useMenuVisibility();
+  const handleOnClick = () => {
+    setOpenMenu(true);
+  };
+
+  const handleOverlayClick = () => setOpenMenu(false);
+
   return (
     <div className="body">
+      {isMenuOpen && isMobileScreen && (
+        <div className="body-overlay" onClick={handleOverlayClick} />
+      )}
+      {isMobileScreen && (
+        <>
+          <Icon
+            name={`MenuIcon` as IconName}
+            className="icon hamburger-menu"
+            size={30}
+            fill="#e1ca99"
+            onClick={() => handleOnClick()}
+          />
+        </>
+      )}
       {!activeProject && selectedMenu === 'me' && <Introduction />}
 
       {!activeProject && isProjectsMenu && (

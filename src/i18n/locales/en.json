@@ -80,6 +80,7 @@
   },
   "resume": {
     "title": "resume",
+    "mobileTitle": "resume",
     "loading": "Fetching resume's data...",
     "empty": "Looks like the translation is not ready yet... Please, change the language or come back later.",
     "hasVisa": "Non-EU visa required",

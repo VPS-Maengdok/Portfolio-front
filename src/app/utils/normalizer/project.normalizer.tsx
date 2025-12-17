@@ -1,14 +1,15 @@
 import { Project, ProjectI18n } from '@/types/api/project.type';
-import { normalizeTranslations } from './translation.normalizer';
-import { normalizeTechnologies } from './technology.normalizer';
 import { TranslateFn } from '@/types/i18n/translate.type';
 import { normalizeSkills } from './skill.normalizer';
+import { normalizeTechnologies } from './technology.normalizer';
+import { normalizeTranslations } from './translation.normalizer';
 
 export const normalizeProject = (
   project: Project,
   t: TranslateFn,
   className: string,
   onClick?: (id: number) => void,
+  isMobileScreen = false,
 ) => {
   const getProjectType = (project: Project) => {
     return project?.company?.id
@@ -35,9 +36,13 @@ export const normalizeProject = (
                   `${className}-technology`,
                 )}
               <p>
-                <span>/</span>
-                {getProjectType(project)}
-                <span>/</span>
+                {!isMobileScreen && (
+                  <>
+                    <span>/</span>
+                    {getProjectType(project)}
+                    <span>/</span>
+                  </>
+                )}
               </p>
             </div>
             <h5>{i18n.label}</h5>

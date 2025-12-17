@@ -1,6 +1,6 @@
 import { LocaleType } from '@/types/i18n/locale.type';
-import fr from './locales/fr.json';
 import en from './locales/en.json';
+import fr from './locales/fr.json';
 import ko from './locales/ko.json';
 
 const translations: Record<LocaleType, object> = {

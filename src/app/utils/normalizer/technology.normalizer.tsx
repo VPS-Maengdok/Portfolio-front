@@ -1,5 +1,5 @@
-import { Technology } from '@/types/api/technology.type';
 import Icon, { IconName } from '@/component/ui/icon';
+import { Technology } from '@/types/api/technology.type';
 
 export const normalizeTechnologies = (
   technologies: Technology[],

@@ -1,6 +1,6 @@
-import { Project } from './project.type';
 import { Curriculum } from './curriculum.type';
 import { Locale } from './locale.type';
+import { Project } from './project.type';
 
 export type Link = {
   id: number;

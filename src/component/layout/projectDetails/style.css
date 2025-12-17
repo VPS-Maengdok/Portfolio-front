@@ -1,10 +1,15 @@
 .project-details-container {
-  height: 100vh;
+  display: grid;
+  gap: 1rem;
+  height: calc(100vh - 5em);
+  grid-template-rows: auto 1fr;
+  min-height: 0;
 }
 
 .project-details {
-  height: 100%;
+  overflow-y: auto;
   align-content: center;
+  min-height: 0;
 }
 
 .project-details.is-loading {
@@ -136,9 +141,10 @@
 
 .project-description-container {
   height: auto;
-  max-height: 60vh;
+  max-height: inherit;
   overflow-y: auto;
-  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   margin-top: 20px;
 }
 
@@ -160,4 +166,22 @@
 .project-link {
   display: inline-flex;
   gap: 4px;
+}
+
+@media (max-width: 1130px) {
+  .project-details {
+    height: 100%;
+    align-content: center;
+  }
+
+  .return {
+    margin: 40px;
+  }
+  .project-details-container {
+    height: calc(100vh - 4rem);
+  }
+  .project-details {
+    padding-bottom: 3rem;
+    -webkit-overflow-scrolling: touch;
+  }
 }

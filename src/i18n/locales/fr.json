@@ -80,6 +80,7 @@
   },
   "resume": {
     "title": "curriculumVitae",
+    "mobileTitle": "cv",
     "loading": "Récupération des données du Curriculum...",
     "empty": "Il semblerait que la traduction ne soit pas encore prête... Passez sur une autre langue ou revenez plus tard.",
     "hasVisa": "Visa hors EU requis",

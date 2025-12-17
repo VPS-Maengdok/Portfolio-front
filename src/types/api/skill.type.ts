@@ -1,8 +1,8 @@
 import { Curriculum } from './curriculum.type';
-import { Experience } from './experience.type';
 import { Education } from './education.type';
-import { Project } from './project.type';
+import { Experience } from './experience.type';
 import { Locale } from './locale.type';
+import { Project } from './project.type';
 
 export type Skill = {
   id: number;

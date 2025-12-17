@@ -1,15 +1,15 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { Project } from '@/types/api/project.type';
-import { getProjects } from '@/service/api/project.api';
-import Card from '@/component/ui/card';
+import { useIsMobileScreen } from '@/app/hooks/useIsMobileScreen';
 import { normalizeProject } from '@/app/utils/normalizer/project.normalizer';
-import { useI18n } from '@/i18n/i18nContext';
-import { useVisibilityObserver } from '@/app/utils/observer/visibility.observer';
 import { normalizeTitle } from '@/app/utils/normalizer/title.normalizer';
-
+import { useVisibilityObserver } from '@/app/utils/observer/visibility.observer';
+import Card from '@/component/ui/card';
+import { useI18n } from '@/i18n/i18nContext';
+import { getProjects } from '@/service/api/project.api';
+import { Project } from '@/types/api/project.type';
+import { useQuery } from '@tanstack/react-query';
+import { useEffect, useRef, useState } from 'react';
 import './style.css';
 
 type ProjectListProps = {
@@ -18,6 +18,7 @@ type ProjectListProps = {
 
 export default function ProjectList(props: ProjectListProps) {
   const { t } = useI18n();
+  const isMobileScreen = useIsMobileScreen();
   const [locale, setLocale] = useState<string | null>(() =>
     typeof window !== 'undefined' ? localStorage.getItem('locale') : null,
   );
@@ -90,6 +91,7 @@ export default function ProjectList(props: ProjectListProps) {
               t,
               `${className}-project`,
               (id: number) => handleSelectedProject(id),
+              isMobileScreen,
             )}
             visible={visibleProjectIds}
             visibleId={project.id}

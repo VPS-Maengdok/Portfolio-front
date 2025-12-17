@@ -1,8 +1,7 @@
 'use client';
 
 import { useI18n } from '@/i18n/i18nContext';
-import { useState, useEffect } from 'react';
-
+import { useEffect, useState } from 'react';
 import './style.css';
 
 export default function Introduction() {

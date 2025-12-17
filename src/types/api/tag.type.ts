@@ -1,5 +1,5 @@
-import { Project } from './project.type';
 import { Locale } from './locale.type';
+import { Project } from './project.type';
 
 export type Tag = {
   id: number;

@@ -1,9 +1,9 @@
+import Icon, { IconName } from '@/component/ui/icon';
 import { Curriculum } from '@/types/api/curriculum.type';
 import { TranslateFn, TranslateListFn } from '@/types/i18n/translate.type';
 import { normalizeCountries, normalizeCountry } from './country.normalizer';
-import Icon, { IconName } from '@/component/ui/icon';
-import { normalizeLinks } from './link.normalizer';
 import { normalizeLanguages } from './language.normalizer';
+import { normalizeLinks } from './link.normalizer';
 import { normalizeWorkTypes } from './workType.normalizer';
 
 export const normalizeHeader = (

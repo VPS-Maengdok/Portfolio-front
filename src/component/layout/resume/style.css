@@ -3,6 +3,9 @@
   margin: 2.5em;
   overflow: hidden;
   row-gap: 2em;
+  height: calc(100vh - 5em);
+  grid-template-rows: auto 1fr;
+  min-height: 0;
 }
 
 .resume > h2 {
@@ -23,11 +26,15 @@
 
 .resume-container {
   display: grid;
+  min-height: 0;
   overflow-y: auto;
-  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .resume-container.is-loading {
+  display: grid;
+  height: 100vh;
   text-align: center;
 }
 
@@ -52,4 +59,16 @@
 .resume .icon.resume-download {
   align-self: center;
   cursor: pointer;
+}
+
+@media (max-width: 1130px) {
+  .resume {
+    margin: 1.5em;
+    height: calc(100vh - 4rem);
+  }
+
+  .resume-container {
+    padding-bottom: 3rem;
+    -webkit-overflow-scrolling: touch;
+  }
 }

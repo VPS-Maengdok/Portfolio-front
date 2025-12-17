@@ -1,20 +1,22 @@
 'use client';
 
+import { useMenu, useMenuControl } from '@/app/clientLayout';
+import { useIsMobileScreen } from '@/app/hooks/useIsMobileScreen';
 import Menu from '@/component/layout/menu';
-import Footer from '../footer';
 import { useI18n } from '@/i18n/i18nContext';
-import { useMenu } from '@/app/clientLayout';
 import { MenuItems } from '@/types/layout/menu.type';
-
+import Footer from '../footer';
 import './style.css';
 
 type SidePanelProps = {
   onSelectProject: (id: number | null) => void;
+  openMenu?: boolean;
 };
 
 export default function SidePanel(props: SidePanelProps) {
   const { t, tList } = useI18n();
   const { selectedMenu, setSelectedMenu, resetSelection } = useMenu();
+  const setOpenMenu = useMenuControl();
 
   const handleSelectMenu = (key: MenuItems) => {
     resetSelection();
@@ -23,10 +25,17 @@ export default function SidePanel(props: SidePanelProps) {
     if (typeof window !== 'undefined') {
       window.dispatchEvent(new Event('menu-change'));
     }
+    setOpenMenu(false);
   };
 
+  const isMobileScreen = useIsMobileScreen();
+
   return (
-    <div className="sidePanel">
+    <div
+      className={`side-panel ${
+        isMobileScreen && props.openMenu ? 'opened' : ''
+      }`}
+    >
       <div className="informations">
         <h1>Maengdok</h1>
         <h2>

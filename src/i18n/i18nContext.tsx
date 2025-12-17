@@ -1,12 +1,12 @@
+import { LocaleType } from '@/types/i18n/locale.type';
 import {
   createContext,
-  useContext,
-  useState,
   ReactNode,
+  useContext,
   useEffect,
+  useState,
 } from 'react';
 import { translate, translateList } from './translation';
-import { LocaleType } from '@/types/i18n/locale.type';
 
 type I18nContextValue = {
   locale: LocaleType;

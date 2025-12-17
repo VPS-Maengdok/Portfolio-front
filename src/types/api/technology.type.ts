@@ -1,7 +1,7 @@
-import { Experience } from './experience.type';
-import { Education } from './education.type';
-import { Project } from './project.type';
 import { Curriculum } from './curriculum.type';
+import { Education } from './education.type';
+import { Experience } from './experience.type';
+import { Project } from './project.type';
 
 export type Technology = {
   id: number;

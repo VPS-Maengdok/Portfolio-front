@@ -1,6 +1,6 @@
+import Icon, { IconName } from '@/component/ui/icon';
 import { Country, CountryI18n } from '@/types/api/country.type';
 import { normalizeTranslations } from './translation.normalizer';
-import Icon, { IconName } from '@/component/ui/icon';
 
 export const normalizeCountries = (
   countries: Country[],

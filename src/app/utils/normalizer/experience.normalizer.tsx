@@ -1,15 +1,16 @@
 import { Experience, ExperienceI18n } from '@/types/api/experience.type';
-import { normalizeTranslations } from './translation.normalizer';
+import { TranslateFn } from '@/types/i18n/translate.type';
+import { normalizeCountry } from './country.normalizer';
+import { normalizeDate } from './date.normalizer';
 import { normalizeSkills } from './skill.normalizer';
 import { normalizeTechnologies } from './technology.normalizer';
-import { normalizeCountry } from './country.normalizer';
-import { TranslateFn } from '@/types/i18n/translate.type';
-import { normalizeDate } from './date.normalizer';
+import { normalizeTranslations } from './translation.normalizer';
 
 export const normalizeExperience = (
   experience: Experience,
   t: TranslateFn,
   className: string,
+  isMobileScreen: boolean = false,
 ) => {
   return (
     <div className={`${className}-container`}>
@@ -36,26 +37,28 @@ export const normalizeExperience = (
                   {experience.company.label}
                 </a>
               </p>
-              <span>{'|'}</span>
-              <p>{experience.company.city}, </p>
-              {normalizeCountry(
-                experience.company.country,
-                `${className}-country`,
-              )}
-              <span>{'|'}</span>
-
-              <div className={`${className}-company-dates`}>
-                <p>{normalizeDate(experience.startingDate)}</p>
-                <span> {'->'} </span>
-                {experience.isCurrentWork ? (
-                  <p>{t('resume.experience.actualWork')}</p>
-                ) : (
-                  <p>
-                    {experience.endingDate
-                      ? normalizeDate(experience.endingDate)
-                      : undefined}
-                  </p>
+              <div className={`${className}-country-dates`}>
+                {!isMobileScreen && <span>{'|'}</span>}
+                <p>{experience.company.city}, </p>
+                {normalizeCountry(
+                  experience.company.country,
+                  `${className}-country`,
                 )}
+                <span>{'|'}</span>
+
+                <div className={`${className}-company-dates`}>
+                  <p>{normalizeDate(experience.startingDate)}</p>
+                  <span> {'->'} </span>
+                  {experience.isCurrentWork ? (
+                    <p>{t('resume.experience.actualWork')}</p>
+                  ) : (
+                    <p>
+                      {experience.endingDate
+                        ? normalizeDate(experience.endingDate)
+                        : undefined}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           )}

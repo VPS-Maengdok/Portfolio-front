@@ -1,28 +1,28 @@
 'use client';
 
-import { useI18n } from '@/i18n/i18nContext';
-import { useRef, useState, useEffect, useMemo } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { Curriculum } from '@/types/api/curriculum.type';
-import { getFirstCurriculum, getPDFBlob } from '@/service/api/curriculum.api';
-import { normalizeExperience } from '@/app/utils/normalizer/experience.normalizer';
+import { useIsMobileScreen } from '@/app/hooks/useIsMobileScreen';
+import { normalizeHeader } from '@/app/utils/normalizer/cvHeader.normalizer';
 import { normalizeEducation } from '@/app/utils/normalizer/education.normalizer';
+import { normalizeExperience } from '@/app/utils/normalizer/experience.normalizer';
 import { normalizeProject } from '@/app/utils/normalizer/project.normalizer';
-import { normalizeTechnologies } from '@/app/utils/normalizer/technology.normalizer';
 import { normalizeSkills } from '@/app/utils/normalizer/skill.normalizer';
+import { normalizeTechnologies } from '@/app/utils/normalizer/technology.normalizer';
 import {
   normalizeSubtitle,
   normalizeTitle,
 } from '@/app/utils/normalizer/title.normalizer';
-import { normalizeHeader } from '@/app/utils/normalizer/cvHeader.normalizer';
 import { useVisibilityObservers } from '@/app/utils/observer/visibility.observer';
 import Card from '@/component/ui/card';
-import { Project } from '@/types/api/project.type';
+import Icon, { IconName } from '@/component/ui/icon';
+import { useI18n } from '@/i18n/i18nContext';
+import { getFirstCurriculum, getPDFBlob } from '@/service/api/curriculum.api';
+import { Curriculum } from '@/types/api/curriculum.type';
 import { Education } from '@/types/api/education.type';
 import { Experience } from '@/types/api/experience.type';
-
+import { Project } from '@/types/api/project.type';
+import { useQuery } from '@tanstack/react-query';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import './style.css';
-import Icon, { IconName } from '@/component/ui/icon';
 
 type ResumeProps = {
   onSelectedProjectChange: (id: number | null) => void;
@@ -50,6 +50,7 @@ export default function Resume(props: ResumeProps) {
     typeof window !== 'undefined' ? localStorage.getItem('locale') : null,
   );
   const className = 'resume';
+  const isMobileScreen = useIsMobileScreen();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -207,7 +208,11 @@ export default function Resume(props: ResumeProps) {
             ref={experienceContainerRef}
           >
             <h4>
-              {normalizeSubtitle(t, 'resume.title', 'resume.experience.title')}
+              {normalizeSubtitle(
+                t,
+                isMobileScreen ? 'resume.mobileTitle' : 'resume.title',
+                'resume.experience.title',
+              )}
             </h4>
             {data.experience &&
               data.experience.map((experience: Experience) => (
@@ -218,6 +223,7 @@ export default function Resume(props: ResumeProps) {
                     experience,
                     t,
                     `${className}-experience`,
+                    isMobileScreen,
                   )}
                   visible={visibleExperienceIds}
                   visibleId={experience.id}
@@ -227,7 +233,11 @@ export default function Resume(props: ResumeProps) {
 
           <div className={`${className}-education`} ref={educationContainerRef}>
             <h4>
-              {normalizeSubtitle(t, 'resume.title', 'resume.education.title')}
+              {normalizeSubtitle(
+                t,
+                isMobileScreen ? 'resume.mobileTitle' : 'resume.title',
+                'resume.education.title',
+              )}
             </h4>
             {data.education &&
               data.education.map((education: Education) => (
@@ -237,6 +247,7 @@ export default function Resume(props: ResumeProps) {
                   normalizer={normalizeEducation(
                     education,
                     `${className}-education`,
+                    isMobileScreen,
                   )}
                   visible={visibleEducationIds}
                   visibleId={education.id}
@@ -246,7 +257,11 @@ export default function Resume(props: ResumeProps) {
 
           <div className={`${className}-project`} ref={projectContainerRef}>
             <h4>
-              {normalizeSubtitle(t, 'resume.title', 'resume.project.title')}
+              {normalizeSubtitle(
+                t,
+                isMobileScreen ? 'resume.mobileTitle' : 'resume.title',
+                'resume.project.title',
+              )}
             </h4>
             {data.project &&
               data.project.map((project: Project) => (
@@ -258,6 +273,7 @@ export default function Resume(props: ResumeProps) {
                     t,
                     `${className}-project`,
                     (id: number) => handleSelectedProject(id),
+                    isMobileScreen,
                   )}
                   visible={visibleProjectIds}
                   visibleId={project.id}
@@ -270,7 +286,11 @@ export default function Resume(props: ResumeProps) {
             ref={technologyContainerRef}
           >
             <h4>
-              {normalizeSubtitle(t, 'resume.title', 'resume.technology.title')}
+              {normalizeSubtitle(
+                t,
+                isMobileScreen ? 'resume.mobileTitle' : 'resume.title',
+                'resume.technology.title',
+              )}
             </h4>
             <Card
               className={`${className}-technology`}
@@ -284,7 +304,11 @@ export default function Resume(props: ResumeProps) {
 
           <div className={`${className}-skill`} ref={skillContainerRef}>
             <h4>
-              {normalizeSubtitle(t, 'resume.title', 'resume.skill.title')}
+              {normalizeSubtitle(
+                t,
+                isMobileScreen ? 'resume.mobileTitle' : 'resume.title',
+                'resume.skill.title',
+              )}
             </h4>
             <Card
               className={`${className}-skill`}

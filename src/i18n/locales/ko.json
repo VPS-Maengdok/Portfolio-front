@@ -58,6 +58,7 @@
   },
   "resume": {
     "title": "이력서",
+    "mobileTitle": "이력서",
     "loading": "Fetching resume's data...",
     "empty": "현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다",
     "hasVisa": "Non-EU visa required",

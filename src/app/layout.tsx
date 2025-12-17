@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import { Providers } from './providers';
 import ClientLayout from './clientLayout';
-
 import './globals.css';
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: 'Maengdok',

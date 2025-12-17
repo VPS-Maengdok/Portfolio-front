@@ -1,6 +1,5 @@
-import { WorkTypeI18n } from '@/types/api/workType.type';
+import { WorkType, WorkTypeI18n } from '@/types/api/workType.type';
 import { normalizeTranslations } from './translation.normalizer';
-import { WorkType } from '@/types/api/workType.type';
 
 export const normalizeWorkTypes = (
   workTypes: WorkType[],

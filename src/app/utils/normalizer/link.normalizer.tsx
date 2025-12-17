@@ -1,6 +1,6 @@
+import Icon, { IconName } from '@/component/ui/icon';
 import { Link, LinkI18n } from '@/types/api/link.type';
 import { normalizeTranslations } from './translation.normalizer';
-import Icon, { IconName } from '@/component/ui/icon';
 
 export const getPath = (url: string): string => {
   return new URL(url).pathname;

@@ -1,11 +1,10 @@
 'use client';
 
 import { useI18n } from '@/i18n/i18nContext';
-import { MenuItems } from '@/types/layout/menu.type';
-
-import './style.css';
 import { TranslateFn } from '@/types/i18n/translate.type';
+import { MenuItems } from '@/types/layout/menu.type';
 import { JSX } from 'react';
+import './style.css';
 
 type MenuProps = {
   selected: MenuItems;

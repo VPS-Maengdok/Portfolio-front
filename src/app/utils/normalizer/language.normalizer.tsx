@@ -1,6 +1,6 @@
+import Icon, { IconName } from '@/component/ui/icon';
 import { Language, LanguageI18n } from '@/types/api/language.type';
 import { normalizeTranslations } from './translation.normalizer';
-import Icon, { IconName } from '@/component/ui/icon';
 
 export const normalizeLanguages = (
   languages: Language[],

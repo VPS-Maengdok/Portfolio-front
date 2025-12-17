@@ -1,5 +1,4 @@
 import { JSX } from 'react';
-
 import './style.css';
 
 type CardProps = {

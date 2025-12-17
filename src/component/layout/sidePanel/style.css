@@ -1,4 +1,4 @@
-.sidePanel {
+.side-panel {
   display: grid;
   grid-area: sidePanel;
   grid-template-rows: 2fr 1fr 1fr 1fr;
@@ -6,14 +6,17 @@
     'informations'
     '.'
     'menu'
+    '.'
     'footer';
   background-color: #293857;
+  height: 100vh;
   padding: 15%;
 }
 
 .informations {
   grid-area: 'informations';
-  margin: 20px;
+  margin: auto;
+  width: 100%;
 }
 
 .informations > h1 {
@@ -41,11 +44,37 @@
 
 .informations span {
   font-weight: lighter;
-
   font-size: 0.8rem;
 }
 
 .informations .titles {
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 1130px) {
+  .side-panel {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 300px;
+    transform: translateX(-200%);
+    z-index: 10;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+
+    transition: transform 0.3s ease;
+  }
+
+  .side-panel.opened {
+    transform: translateX(0%);
+  }
+
+  .informations > h1 {
+    font-weight: bolder;
+    line-height: 2em;
+  }
+
+  .informations > h2 > sup {
+    margin-left: 2px;
+  }
 }

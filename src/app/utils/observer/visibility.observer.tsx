@@ -83,7 +83,9 @@ export const useVisibilityObservers = (configs: VisibilityObserverConfig[]) => {
                 return;
               }
 
-              setVisibleIds((prev) => (prev.includes(id) ? prev : [...prev, id]));
+              setVisibleIds((prev) =>
+                prev.includes(id) ? prev : [...prev, id],
+              );
 
               observer.unobserve(element);
             });
@@ -97,6 +99,5 @@ export const useVisibilityObservers = (configs: VisibilityObserverConfig[]) => {
     );
 
     return () => observers.forEach((observer) => observer.disconnect());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [configs]);
 };

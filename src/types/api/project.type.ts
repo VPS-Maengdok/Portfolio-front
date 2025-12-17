@@ -1,13 +1,13 @@
 import { Company } from './company.type';
+import { Curriculum } from './curriculum.type';
 import { Link } from './link.type';
+import { Locale } from './locale.type';
+import { Picture } from './picture.type';
 import { School } from './school.type';
 import { Skill } from './skill.type';
 import { Status } from './status.type';
 import { Tag } from './tag.type';
 import { Technology } from './technology.type';
-import { Curriculum } from './curriculum.type';
-import { Picture } from './picture.type';
-import { Locale } from './locale.type';
 
 export type Project = {
   id: number;

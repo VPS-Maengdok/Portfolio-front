@@ -1,8 +1,8 @@
-import { School } from './school.type';
 import { Curriculum } from './curriculum.type';
+import { Locale } from './locale.type';
+import { School } from './school.type';
 import { Skill } from './skill.type';
 import { Technology } from './technology.type';
-import { Locale } from './locale.type';
 
 export type Education = {
   id: number;
