@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  nextjs-app:
+    image: maengdok/portfolio_front:1.0.0
+    container_name: maengdok_portfolio_front
+    restart: always
+    build:
+      context: .
+      dockerfile: docker/prod.Dockerfile
+    environment:
+      - NODE_ENV=production
+    networks:
+      - proxy
+      - portfolio
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.portfolio-front.rule=Host(`maengdok.fr`)"
+      - "traefik.http.routers.portfolio-front.entrypoints=websecure"
+      - "traefik.http.routers.portfolio-front.tls.certresolver=myresolver"
+      - "traefik.http.services.portfolio-front.loadbalancer.server.port=3000"
+
+networks:
+  proxy:
+    external: true
+  portfolio:
+    external: true

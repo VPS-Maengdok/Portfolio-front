@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: 'Maengdok',
   description:
     'Maengdok - French Full Stack developer available for job opportunities in Paris and Asia',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
