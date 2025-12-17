@@ -23,7 +23,7 @@ export default function Footer() {
     <div className="footer">
       <div className="footer-github-icon-container">
         {!githubIsLoading && githubData && (
-          <a href={githubData.url} target="_blank">
+          <a href={githubData.url ?? undefined} target="_blank">
             <Icon
               className="footer-github-icon"
               name={githubData.icon}
@@ -34,7 +34,7 @@ export default function Footer() {
       </div>
       <div className="footer-linkedin-icon-container">
         {!linkedinIsLoading && linkedinData && (
-          <a href={linkedinData.url} target="_blank">
+          <a href={linkedinData.url ?? undefined} target="_blank">
             <Icon
               className="footer-linkedin-icon"
               name={linkedinData.icon}
