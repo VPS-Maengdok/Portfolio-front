@@ -31,7 +31,6 @@ export function getCurriculum(
   id: number,
   locale: string = 'fr',
 ): Promise<Curriculum> {
-  console.log(locale);
   return apiRequest<Curriculum>(`/curriculum/${id}`, {
     query: { locale },
     method: 'GET',
