@@ -295,7 +295,7 @@ export default function Resume(props: ResumeProps) {
             <Card
               className={`${className}-technology`}
               normalizer={normalizeTechnologies(
-                data.technology,
+                data.technology ?? [],
                 `${className}-technology`,
               )}
               visible={visibleTechnologyIds}
@@ -312,7 +312,7 @@ export default function Resume(props: ResumeProps) {
             </h4>
             <Card
               className={`${className}-skill`}
-              normalizer={normalizeSkills(data.skill, `${className}-skill`)}
+              normalizer={normalizeSkills(data.skill ?? [], `${className}-skill`)}
               visible={visibleSkillIds}
             />
           </div>

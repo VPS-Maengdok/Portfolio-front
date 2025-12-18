@@ -6,8 +6,10 @@ import { useI18n } from '@/i18n/i18nContext';
 import { getProject } from '@/service/api/project.api';
 import { Link, LinkI18n } from '@/types/api/link.type';
 import { Project, ProjectI18n } from '@/types/api/project.type';
+import { StatusI18n } from '@/types/api/status.type';
 import { Skill, SkillI18n } from '@/types/api/skill.type';
 import { Tag, TagI18n } from '@/types/api/tag.type';
+import { Country } from '@/types/api/country.type';
 import { Technology } from '@/types/api/technology.type';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useRef, useState } from 'react';
@@ -17,6 +19,14 @@ type ProjectDetailsProps = {
   project: number;
   onSelectedProjectChange: (id: null) => void;
 };
+
+type UrlHolder = {
+  url?: string | null;
+  repositoryUrl?: string | null;
+};
+
+const getCountryLabel = (country: Country): string =>
+  country.i18n[0]?.label ?? '';
 
 export default function ProjectDetails(props: ProjectDetailsProps) {
   const { t } = useI18n();
@@ -108,6 +118,12 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
     ? data.i18n[0] ?? null
     : data.i18n;
 
+  const statusI18n: StatusI18n | null = data.status
+    ? Array.isArray(data.status.i18n)
+      ? data.status.i18n[0] ?? null
+      : data.status.i18n
+    : null;
+
   if (!projectI18n) {
     return null;
   }
@@ -118,7 +134,7 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
     ? t('misc.projectType.schoolProject')
     : t('misc.projectType.sideProject');
 
-  const getLinkHref = (link: Link): string | undefined => {
+  const getLinkHref = (link: UrlHolder): string | undefined => {
     if (link.url != null && link.url !== '') {
       return link.url;
     }
@@ -186,12 +202,12 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
           <div className="project-title-status-container">
             <h3>
               {projectI18n.label}
-              {data.status && (
+              {data.status && statusI18n && (
                 <sup
-                  key={`${data.status.id}-${data.status.i18n.locale.id}`}
+                  key={`${data.status.id}-${statusI18n.locale.id}`}
                   className="project-status"
                 >
-                  {data.status.i18n.label}
+                  {statusI18n.label}
                 </sup>
               )}
             </h3>
@@ -206,7 +222,7 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
                       {data.company.label}
                     </a>
                     <span> | </span>
-                    {data.company.city}, {data.company.country.i18n.label}
+                    {data.company.city}, {getCountryLabel(data.company.country)}
                   </p>
                 )}
 
@@ -214,7 +230,7 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
                   <p>
                     <span>@</span>
                     {data.school.label}
-                    <span>|</span> {data.school.country.i18n.label}
+                    <span>|</span> {getCountryLabel(data.school.country)}
                   </p>
                 )}
               </div>

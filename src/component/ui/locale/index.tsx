@@ -12,7 +12,7 @@ export default function Locale() {
   const [openLanguageDisplay, setOpenLanguageDisplay] =
     useState<boolean>(false);
 
-  const { data, isLoading } = useQuery<L>({
+  const { data, isLoading } = useQuery<L[]>({
     queryKey: ['locales'],
     queryFn: () => getLocales(),
     enabled: true,

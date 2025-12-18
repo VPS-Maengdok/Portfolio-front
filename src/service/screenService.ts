@@ -40,10 +40,10 @@ class ScreenService {
       };
       const legacyAddListener = (
         mql as unknown as {
-          addListener?: MediaQueryListListener;
+          addListener?: (listener: MediaQueryListListener) => void;
         }
       ).addListener;
-      legacyAddListener?.call(mql, legacyHandler);
+      legacyAddListener?.(legacyHandler);
     }
   }
 

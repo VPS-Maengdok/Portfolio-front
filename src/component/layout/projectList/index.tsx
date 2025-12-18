@@ -78,11 +78,13 @@ export default function ProjectList(props: ProjectListProps) {
     );
   }
 
+  const projects = data ?? [];
+
   return (
     <div className={`${className}`}>
       <h2>{normalizeTitle(t, 'projects.title')}</h2>
       <div className={`${className}-container`} ref={projectContainerRef}>
-        {data.map((project: Project) => (
+        {projects.map((project: Project) => (
           <Card
             key={project.id}
             className={`${className}-project clickable`}
