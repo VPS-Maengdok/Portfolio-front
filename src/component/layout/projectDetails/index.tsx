@@ -5,7 +5,7 @@ import Icon, { IconName } from '@/component/ui/icon';
 import { useI18n } from '@/i18n/i18nContext';
 import { getProject } from '@/service/api/project.api';
 import { Link, LinkI18n } from '@/types/api/link.type';
-import { Project } from '@/types/api/project.type';
+import { Project, ProjectI18n } from '@/types/api/project.type';
 import { Skill, SkillI18n } from '@/types/api/skill.type';
 import { Tag, TagI18n } from '@/types/api/tag.type';
 import { Technology } from '@/types/api/technology.type';
@@ -43,6 +43,10 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
     queryFn: () => getProject(props.project, locale || undefined),
     enabled: true,
   });
+
+  const handleOnClickReturn = () => {
+    props.onSelectedProjectChange(null);
+  };
 
   useEffect(() => {
     const node = cardRef.current;
@@ -100,20 +104,19 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
     );
   }
 
-  const projectI18n =
-    Array.isArray(data.i18n) && data.i18n.length > 0
-      ? data.i18n[0]
-      : data.i18n;
+  const projectI18n: ProjectI18n | null = Array.isArray(data.i18n)
+    ? data.i18n[0] ?? null
+    : data.i18n;
+
+  if (!projectI18n) {
+    return null;
+  }
 
   const type = data.company
     ? t('misc.projectType.workProject')
     : data.school
     ? t('misc.projectType.schoolProject')
     : t('misc.projectType.sideProject');
-
-  const handleOnClickReturn = () => {
-    props.onSelectedProjectChange(null);
-  };
 
   const getLinkHref = (link: Link): string | undefined => {
     if (link.url != null && link.url !== '') {
