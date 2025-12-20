@@ -27,10 +27,6 @@
   background-position: bottom 50% right 5%;
 }
 
-.card:not(.background-image) .project-list-project-description {
-  width: 100%;
-}
-
 .card.clickable:hover {
   background-color: #212227;
   cursor: pointer;
@@ -118,6 +114,7 @@
   color: #e1ca99;
 }
 
+.card:not(.background-image) .project-list-project-description,
 .card .resume-experience-description,
 .card .resume-education-description,
 .card .resume-project-description {
@@ -129,7 +126,7 @@
   text-align: justify;
   margin: 20px 0px;
   align-content: center;
-  width: 80%;
+  width: 100%;
   flex: 1;
 }
 
@@ -160,6 +157,7 @@
 .card .resume-education-school-dates {
   width: 100%;
   display: inline-flex;
+  flex-wrap: wrap;
   gap: 4px;
   width: fit-content;
   height: fit-content;
