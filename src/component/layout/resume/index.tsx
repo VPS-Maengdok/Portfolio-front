@@ -211,7 +211,9 @@ export default function Resume(props: ResumeProps) {
               {normalizeSubtitle(
                 t,
                 isMobileScreen ? 'resume.mobileTitle' : 'resume.title',
-                'resume.experience.title',
+                isMobileScreen
+                  ? 'resume.experience.mobileTitle'
+                  : 'resume.experience.title',
               )}
             </h4>
             {data.experience &&
@@ -312,7 +314,10 @@ export default function Resume(props: ResumeProps) {
             </h4>
             <Card
               className={`${className}-skill`}
-              normalizer={normalizeSkills(data.skill ?? [], `${className}-skill`)}
+              normalizer={normalizeSkills(
+                data.skill ?? [],
+                `${className}-skill`,
+              )}
               visible={visibleSkillIds}
             />
           </div>

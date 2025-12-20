@@ -87,6 +87,7 @@
   font-weight: bold;
   font-size: 2rem;
   color: #e1ca99;
+  max-width: 80%;
 }
 
 .project-status {

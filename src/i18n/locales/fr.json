@@ -94,6 +94,7 @@
     },
     "experience": {
       "title": "experiencesProfessionnelles",
+      "mobileTitle": "expPro",
       "actualWork": "Emploi actuel"
     },
     "education": {

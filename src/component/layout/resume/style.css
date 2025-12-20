@@ -25,11 +25,15 @@
 }
 
 .resume-container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   min-height: 0;
   overflow-y: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .resume-container.is-loading {
@@ -70,5 +74,7 @@
   .resume-container {
     padding-bottom: 3rem;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
+    overflow-x: hidden;
   }
 }
