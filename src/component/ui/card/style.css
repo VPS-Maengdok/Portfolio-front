@@ -60,7 +60,6 @@
 .card .resume-header-work-type,
 .card .resume-header-contract-type-container,
 .card .resume-header-expected-country,
-.card .resume-header-language,
 .card .resume-experience-technology-icon,
 .card .resume-education-technology-icon,
 .card .resume-project-technology-icon,
@@ -193,6 +192,7 @@
   .card .resume-experience-country-dates,
   .card .resume-education-country-dates {
     display: inline-flex;
+    flex-wrap: wrap;
     gap: 4px;
     width: fit-content;
   }

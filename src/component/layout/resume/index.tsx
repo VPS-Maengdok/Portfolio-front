@@ -177,7 +177,12 @@ export default function Resume(props: ResumeProps) {
   return (
     <div className={`${className}`}>
       <div className={`${className}-title`}>
-        <h2>{normalizeTitle(t, 'resume.title')}</h2>
+        <h2>
+          {normalizeTitle(
+            t,
+            isMobileScreen ? 'resume.mobileTitle' : 'resume.title',
+          )}
+        </h2>
         <Icon
           name={`DownloadIcon` as IconName}
           className={`icon ${className}-download`}
