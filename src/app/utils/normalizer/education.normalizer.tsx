@@ -10,6 +10,7 @@ export const normalizeEducation = (
   className: string,
   isMobileScreen: boolean = false,
 ) => {
+  console.log(education.i18n);
   return (
     <div className={`${className}-container`}>
       {normalizeTranslations<EducationI18n>(education.i18n).map((i18n) => (
@@ -33,9 +34,13 @@ export const normalizeEducation = (
             <div className={`${className}-school`}>
               <p>
                 <span>@</span>
-                <a href={education.school.url ?? undefined} target="_blank">
-                  {education.school.label}
-                </a>
+                {education.school.url ? (
+                  <a href={education.school.url} target="_blank">
+                    {education.school.label}
+                  </a>
+                ) : (
+                  education.school.label
+                )}
               </p>
 
               <div className={`${className}-country-dates`}>

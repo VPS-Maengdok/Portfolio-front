@@ -10,7 +10,8 @@
     'footer';
   background-color: #293857;
   height: 100vh;
-  padding: 15%;
+  justify-content: center;
+  padding: 15% 5%;
 }
 
 .informations {
@@ -61,6 +62,7 @@
     z-index: 10;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     justify-content: center;
+    padding: 5% 20px;
 
     transition: transform 0.3s ease;
   }
@@ -74,7 +76,14 @@
     line-height: 2em;
   }
 
+  .informations > h2 {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
   .informations > h2 > sup {
     margin-left: 2px;
+    margin-top: 10px;
   }
 }

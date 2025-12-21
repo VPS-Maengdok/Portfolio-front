@@ -6,7 +6,7 @@
 }
 
 .menu > h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: #c2d4dc;
   height: fit-content;
@@ -44,6 +44,10 @@
 }
 
 @media (max-width: 1130px) {
+  .menu > h2 {
+    font-size: 1.2rem;
+  }
+
   .menu .sep {
     margin: 0 7px;
   }

@@ -67,6 +67,7 @@
 
 .project-technology-container {
   display: inline-flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -80,7 +81,7 @@
 }
 
 .project-title-status-container {
-  width: max-content;
+  width: 100%;
 }
 
 .project-title-status-container > h3 {
@@ -176,13 +177,34 @@
   }
 
   .return {
-    margin: 40px;
+    margin: 30px 20px 20px 20px;
   }
+
+  .details {
+    margin: 0px 20px 20px 20px;
+    padding: 20px;
+  }
+
   .project-details-container {
     height: calc(100vh - 4rem);
   }
   .project-details {
     padding-bottom: 3rem;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .project-tag-container {
+    margin-bottom: 20px;
+  }
+
+  .project-title-status-container > h3 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  .project-title-status-container > h3 > sup {
+    align-self: center;
+    margin-top: 8px;
   }
 }

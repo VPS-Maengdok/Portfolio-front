@@ -28,7 +28,13 @@ div {
   color: #c2d4dc;
 }
 
-span {
+span,
+p > span,
+p > strong,
+p > b,
+li > span,
+li > strong,
+li > b {
   color: #e1ca99;
 }
 

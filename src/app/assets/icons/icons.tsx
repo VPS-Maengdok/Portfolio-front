@@ -14,15 +14,16 @@ import PinIcon from './misc/pin.icon';
 import DjangoIcon from './technology/django.icon';
 import DockerIcon from './technology/docker.icon';
 import JavascriptIcon from './technology/javascript.icon';
+import MysqlIcon from './technology/mysql.icon';
 import PhpIcon from './technology/php.icon';
+import PostgresqlIcon from './technology/postgresql.icon';
 import PythonIcon from './technology/python.icon';
 import ReactIcon from './technology/react.icon';
 import SymfonyIcon from './technology/symfony.icon';
 import TypescriptIcon from './technology/typescript.icon';
 
 export const icons = {
-  GithubIcon,
-  GitlabIcon,
+  /** TECHNOLOGIES */
   PhpIcon,
   PythonIcon,
   SymfonyIcon,
@@ -30,12 +31,21 @@ export const icons = {
   ReactIcon,
   DockerIcon,
   TypescriptIcon,
-  ArrowLeftIcon,
   JavascriptIcon,
+  PostgresqlIcon,
+  MysqlIcon,
+  ReactnativeIcon: ReactIcon,
+
+  /** MISC */
+  GithubIcon,
+  GitlabIcon,
+  ArrowLeftIcon,
   LinkedinIcon,
   PinIcon,
   DownloadIcon,
   MenuIcon,
+
+  /** FLAGS */
   frIcon: FrIcon,
   enIcon: EnIcon,
   koIcon: KoIcon,

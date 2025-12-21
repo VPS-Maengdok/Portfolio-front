@@ -33,9 +33,13 @@ export const normalizeExperience = (
             <div className={`${className}-company`}>
               <p>
                 <span>@</span>
-                <a href={experience.company.url ?? undefined} target="_blank">
-                  {experience.company.label}
-                </a>
+                {experience.company.url ? (
+                  <a href={experience.company.url} target="_blank">
+                    {experience.company.label}
+                  </a>
+                ) : (
+                  experience.company.label
+                )}
               </p>
               <div className={`${className}-country-dates`}>
                 {!isMobileScreen && <span>{'|'}</span>}

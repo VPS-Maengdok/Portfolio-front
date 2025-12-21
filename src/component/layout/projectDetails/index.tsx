@@ -1,15 +1,16 @@
 'use client';
 
+import { useIsMobileScreen } from '@/app/hooks/useIsMobileScreen';
 import { normalizeTranslations } from '@/app/utils/normalizer/translation.normalizer';
 import Icon, { IconName } from '@/component/ui/icon';
 import { useI18n } from '@/i18n/i18nContext';
 import { getProject } from '@/service/api/project.api';
+import { Country } from '@/types/api/country.type';
 import { Link, LinkI18n } from '@/types/api/link.type';
 import { Project, ProjectI18n } from '@/types/api/project.type';
-import { StatusI18n } from '@/types/api/status.type';
 import { Skill, SkillI18n } from '@/types/api/skill.type';
+import { StatusI18n } from '@/types/api/status.type';
 import { Tag, TagI18n } from '@/types/api/tag.type';
-import { Country } from '@/types/api/country.type';
 import { Technology } from '@/types/api/technology.type';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useRef, useState } from 'react';
@@ -35,6 +36,7 @@ export default function ProjectDetails(props: ProjectDetailsProps) {
   const [locale, setLocale] = useState<string | null>(() =>
     typeof window !== 'undefined' ? localStorage.getItem('locale') : null,
   );
+  const isMobileScreen = useIsMobileScreen();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
