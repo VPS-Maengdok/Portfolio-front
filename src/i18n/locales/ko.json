@@ -28,22 +28,27 @@
     },
     "journey": {
       "title": "내여정",
+      "mobileTitle": "내여정",
       "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
     },
     "motivation": {
       "title": "저를동기부여하는것",
+      "mobileTitle": "동기",
       "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
     },
     "lookingFor": {
       "title": "제가찾고있는것",
+      "mobileTitle": "찾기",
       "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
     },
     "passion": {
       "title": "나를열정적으로만드는것",
+      "mobileTitle": "열정",
       "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
     },
     "mentions": {
       "title": "특별한영예",
+      "mobileTitle": "사례",
       "description": ["현재 진행 중인 작업이며 번역이 곧 이루어질 예정입니다"]
     }
   },

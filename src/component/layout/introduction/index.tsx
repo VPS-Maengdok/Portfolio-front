@@ -1,5 +1,10 @@
 'use client';
 
+import { useIsMobileScreen } from '@/app/hooks/useIsMobileScreen';
+import {
+  normalizeSubtitle,
+  normalizeTitle,
+} from '@/app/utils/normalizer/title.normalizer';
 import { useI18n } from '@/i18n/i18nContext';
 import { useEffect, useState } from 'react';
 import './style.css';
@@ -7,6 +12,7 @@ import './style.css';
 export default function Introduction() {
   const { t, tList } = useI18n();
   const [visibleMap, setVisibleMap] = useState<Record<string, boolean>>({});
+  const isMobileScreen = useIsMobileScreen();
 
   useEffect(() => {
     const nodes = document.querySelectorAll<HTMLElement>('[data-reveal-id]');
@@ -33,11 +39,7 @@ export default function Introduction() {
 
   return (
     <div className="introduction">
-      <h2>
-        <span>{'$'}</span>
-        {t('introduction.selfIntroduction.title')}
-        <span>{'();'}</span>
-      </h2>
+      <h2>{normalizeTitle(t, 'introduction.selfIntroduction.title')}</h2>
       <div className="container">
         <div className="title-introduction-container">
           <div
@@ -61,11 +63,13 @@ export default function Introduction() {
 
         <div className="journey-container">
           <h3>
-            <span>{'$'}</span>
-            {t('introduction.selfIntroduction.title')}
-            <span>{'->'}</span>
-            {t('introduction.journey.title')}
-            <span>{'();'}</span>
+            {normalizeSubtitle(
+              t,
+              'introduction.selfIntroduction.title',
+              isMobileScreen
+                ? 'introduction.journey.mobileTitle'
+                : 'introduction.journey.title',
+            )}
           </h3>
           <div
             className={`journey-description ${
@@ -88,11 +92,13 @@ export default function Introduction() {
 
         <div className="motivation-container">
           <h3>
-            <span>{'$'}</span>
-            {t('introduction.selfIntroduction.title')}
-            <span>{'->'}</span>
-            {t('introduction.motivation.title')}
-            <span>{'();'}</span>
+            {normalizeSubtitle(
+              t,
+              'introduction.selfIntroduction.title',
+              isMobileScreen
+                ? 'introduction.motivation.mobileTitle'
+                : 'introduction.motivation.title',
+            )}
           </h3>
           <div
             className={`motivation-description ${
@@ -115,11 +121,13 @@ export default function Introduction() {
 
         <div className="lookingfor-container">
           <h3>
-            <span>{'$'}</span>
-            {t('introduction.selfIntroduction.title')}
-            <span>{'->'}</span>
-            {t('introduction.lookingFor.title')}
-            <span>{'();'}</span>
+            {normalizeSubtitle(
+              t,
+              'introduction.selfIntroduction.title',
+              isMobileScreen
+                ? 'introduction.lookingFor.mobileTitle'
+                : 'introduction.lookingFor.title',
+            )}
           </h3>
           <div
             className={`lookingfor-description ${
@@ -142,11 +150,13 @@ export default function Introduction() {
 
         <div className="passion-container">
           <h3>
-            <span>{'$'}</span>
-            {t('introduction.selfIntroduction.title')}
-            <span>{'->'}</span>
-            {t('introduction.passion.title')}
-            <span>{'();'}</span>
+            {normalizeSubtitle(
+              t,
+              'introduction.selfIntroduction.title',
+              isMobileScreen
+                ? 'introduction.passion.mobileTitle'
+                : 'introduction.passion.title',
+            )}
           </h3>
           <div
             className={`passion-description ${
@@ -169,11 +179,13 @@ export default function Introduction() {
 
         <div className="mentions-container">
           <h3>
-            <span>{'$'}</span>
-            {t('introduction.selfIntroduction.title')}
-            <span>{'->'}</span>
-            {t('introduction.mentions.title')}
-            <span>{'();'}</span>
+            {normalizeSubtitle(
+              t,
+              'introduction.selfIntroduction.title',
+              isMobileScreen
+                ? 'introduction.mentions.mobileTitle'
+                : 'introduction.mentions.title',
+            )}
           </h3>
           <div
             className={`mentions-description ${

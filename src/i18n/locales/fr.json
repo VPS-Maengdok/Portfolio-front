@@ -32,6 +32,7 @@
     },
     "journey": {
       "title": "monParcours",
+      "mobileTitle": "parcours",
       "description": [
         "<p>J’ai découvert le développement à l’époque des forums et de l’essor de Minecraft. C’est en créant mes premiers <strong>forums</strong> et en configurant des <strong>serveurs Minecraft</strong> que j’ai trouvé ma première véritable passion pour la programmation. Cette intuition s’est confirmée au lycée, lorsque j’ai découvert le <strong>langage C</strong>, ce qui m’a naturellement conduit à intégrer <strong>Epitech Paris</strong> pour poursuivre des études en informatique.</p>",
         "<p>Faute de ressources financières, je n’ai pas pu aller au bout de ce parcours, mais j’ai choisi de mettre à profit ma seconde passion : les <strong>langues étrangères</strong>, et plus particulièrement les <strong>langues asiatiques</strong>. J’ai ainsi étudié le <strong>coréen</strong> dans l’objectif de travailler un jour en Corée du Sud en tant que développeur.</p>",
@@ -40,6 +41,7 @@
     },
     "motivation": {
       "title": "ceQuiMeMotive",
+      "mobileTitle": "motivation",
       "description": [
         "<p>Bien qu’il soit confortable de rester dans ma zone de confort, je recherche activement des situations qui m’obligent à en sortir. J’aime me confronter à des <strong>défis</strong>, qu’il s’agisse de voyager seul à l’autre bout du monde pour découvrir une <strong>nouvelle culture</strong> et appréhender une <strong>nouvelle langue</strong>, ou de me lancer dans des projets web dans un <strong>langage</strong> encore inconnu ou que je ne maîtrise pas encore afin d’élargir mes compétences et de renforcer celles que je possède déjà.</p>",
         "<p>J’ai besoin d’être <strong>stimulé intellectuellement</strong> pour rester motivé et éviter toute forme de monotonie.</p>"
@@ -47,6 +49,7 @@
     },
     "lookingFor": {
       "title": "ceQueJeRecherche",
+      "mobileTitle": "recherche",
       "description": [
         "<p>Mon ambition est de <strong>progresser continuellement</strong> tout en restant <strong>stimulé intellectuellement</strong> par des projets variés. J’apprécie particulièrement être confronté à de <strong>nouvelles langues</strong> et à de <strong>nouvelles cultures</strong>, ce qui motive mon ouverture à des opportunités professionnelles en Asie (<span>Corée du Sud</span>, <span>Japon</span>, <span>Vietnam</span>, <span>Chine</span>).</p>",
         "<p>Polyvalent par nature, j’aime travailler sur des <strong>projets diversifiés</strong> qui me permettent d’explorer différents aspects du développement. Même si ma préférence va clairement au <strong>Back End</strong> (<strong>Symfony</strong>, <strong>Django</strong>), un poste dédié à ce domaine ou de <strong>Full Stack</strong> me convient parfaitement.</p>"
@@ -54,6 +57,7 @@
     },
     "passion": {
       "title": "ceQuiMePassionne",
+      "mobileTitle": "passion",
       "description": [
         "<p>J’ai plusieurs passions : les <strong>jeux vidéo</strong>, l’<strong>Asie</strong> avec ses langues, son histoire et ses cultures, le <strong>développement</strong> ainsi que les <strong>animaux</strong>.</p>",
         "<p>Dans l’univers du jeu vidéo, j’ai un attrait particulier pour les <strong>MMORPG</strong>. J’apprécie la progression continue qu’ils offrent, qu’il s’agisse d’optimiser ses cycles en tant que <span>DPS</span> ou <span>soigneur</span>, ou d’améliorer son équipement pour rester compétitif. Commencer un nouveau MMORPG est pour moi l’occasion idéale de découvrir un univers en même temps que les autres joueurs, tout en travaillant sur le <span>build</span> le plus adapté à mon style de jeu afin de rester dans le haut du <span>DPS meter</span>. J’apprécie également la dimension stratégique des <strong>donjons</strong>, <strong>raids</strong> et <strong>world boss</strong>, qui demandent un véritable apprentissage et une excellente coordination.</p>",
@@ -63,6 +67,7 @@
     },
     "mentions": {
       "title": "mentionsSpeciales",
+      "mobileTitle": "remerciements",
       "description": [
         "<p>Je tiens à exprimer ma gratitude envers toutes les personnes qui ont apporté du soutien, de la bienveillance ou une influence positive dans mon parcours, que ce soit dans mon projet de vie, mon apprentissage ou au travers de collaborations enrichissantes :</p>",
         "<ul><li><span>-></span> Idris C.</li><li><span>-></span> Nirund P.</li><li><span>-></span> David R.</li><li><span>-></span> Abder. Z.</li></li><span>-></span> Yann C.-T.</li><li><span>-></span> Rémi R.</li><li><span>-></span> David P.</li><li><span>-></span> Hiren P.</li></ul>"

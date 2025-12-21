@@ -32,6 +32,7 @@
     },
     "journey": {
       "title": "myJourney",
+      "mobileTitle": "journey",
       "description": [
         "<p>I discovered software development during the early days of online forums and the rise of Minecraft. By creating my first <strong>forums</strong> and configuring <strong>Minecraft servers</strong>, I found my first true passion for programming. This interest was confirmed in high school when I discovered the <strong>C programming language</strong>, which naturally led me to join <strong>Epitech Paris</strong> to pursue studies in computer science.</p>",
         "<p>Due to financial constraints, I was unable to complete this academic path. I therefore decided to focus on my second passion: <strong>foreign languages</strong>, and more specifically <strong>Asian languages</strong>. I studied <strong>Korean</strong> with the long-term goal of working in South Korea as a developer.</p>",
@@ -40,6 +41,7 @@
     },
     "motivation": {
       "title": "whatDrivesMe",
+      "mobileTitle": "motivation",
       "description": [
         "<p>Although it can be comfortable to stay within my comfort zone, I actively seek situations that push me beyond it. I enjoy taking on <strong>challenges</strong>, whether it means traveling alone to the other side of the world to discover a <strong>new culture</strong> and learn a <strong>new language</strong>, or starting web projects using a <strong>programming language</strong> that is new to me in order to broaden my skill set and strengthen existing ones.</p>",
         "<p>I need to be <strong>intellectually stimulated</strong> to stay motivated and avoid any form of monotony.</p>"
@@ -47,6 +49,7 @@
     },
     "lookingFor": {
       "title": "whatImLookingFor",
+      "mobileTitle": "lookingFor",
       "description": [
         "<p>My ambition is to <strong>continuously grow</strong> while remaining <strong>intellectually challenged</strong> through diverse projects. I particularly enjoy being exposed to <strong>new languages</strong> and <strong>new cultures</strong>, which is why I am open to professional opportunities in Asia (<span>South Korea</span>, <span>Japan</span>, <span>Vietnam</span>, <span>China</span>).</p>",
         "<p>Versatile by nature, I enjoy working on <strong>diverse projects</strong> that allow me to explore different aspects of development. While my preference clearly lies in <strong>Back-End development</strong> (<strong>Symfony</strong>, <strong>Django</strong>), I am equally comfortable in a dedicated back-end role or a <strong>Full Stack</strong> position.</p>"
@@ -54,6 +57,7 @@
     },
     "passion": {
       "title": "whatImPassionateAbout",
+      "mobileTitle": "passion",
       "description": [
         "<p>I have several passions: <strong>video games</strong>, <strong>Asia</strong> with its languages, history, and cultures, <strong>software development</strong>, and <strong>animals</strong>.</p>",
         "<p>In the world of video games, I have a particular affinity for <strong>MMORPGs</strong>. I enjoy the sense of continuous progression they offer, whether it involves optimizing rotations as a <span>DPS</span> or <span>healer</span>, or improving gear to remain competitive. Starting a new MMORPG is, for me, the ideal opportunity to discover a universe alongside other players, while working on the most suitable <span>build</span> for my playstyle to stay near the top of the <span>DPS meter</span>. I also appreciate the strategic depth of <strong>dungeons</strong>, <strong>raids</strong>, and <strong>world bosses</strong>, which require both learning and strong coordination.</p>",
@@ -63,6 +67,7 @@
     },
     "mentions": {
       "title": "specialThanks",
+      "mobileTitle": "honour",
       "description": [
         "<p>I would like to express my sincere gratitude to everyone who has provided support, kindness, or positive influence throughout my journey—whether in my life project, my learning process, or through meaningful collaborations:</p>",
         "<ul><li><span>-></span> Idris C.</li><li><span>-></span> Nirund P.</li><li><span>-></span> David R.</li><li><span>-></span> Abder Z.</li><li><span>-></span> Yann C.-T.</li><li><span>-></span> Rémi R.</li><li><span>-></span> David P.</li><li><span>-></span> Hiren P.</li></ul>"
