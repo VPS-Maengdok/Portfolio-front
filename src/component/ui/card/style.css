@@ -59,6 +59,7 @@
 .card .resume-project-technology-list-container {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
   width: max-content;
 }
 
