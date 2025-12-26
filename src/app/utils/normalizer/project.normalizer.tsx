@@ -31,9 +31,10 @@ export const normalizeProject = (
           <div className={`${className}-header`}>
             <div className={`${className}-technology-container`}>
               {project?.technology &&
+                project.technology.length > 0 &&
                 normalizeTechnologies(
                   project.technology,
-                  `${className}-technology`,
+                  `${className}-technology-list`,
                 )}
               <p>
                 {!isMobileScreen && (
@@ -66,7 +67,7 @@ export const normalizeProject = (
             <div className={`${className}-description`} />
           )}
 
-          {project?.skill && (
+          {project?.skill && project.skill.length > 0 && (
             <div className={`${className}-skill-block`}>
               <h6>Skills</h6>
               {normalizeSkills(project.skill, `${className}-skill`)}

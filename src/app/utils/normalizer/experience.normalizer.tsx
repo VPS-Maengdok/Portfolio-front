@@ -20,7 +20,7 @@ export const normalizeExperience = (
           data-experience-id={experience.id}
           className={`${className}-content`}
         >
-          {experience?.technology && (
+          {experience?.technology && experience.technology.length > 0 && (
             <div className={`${className}-technology-container`}>
               {normalizeTechnologies(
                 experience.technology,
@@ -78,7 +78,7 @@ export const normalizeExperience = (
 
           {!i18n.description && <div className={`${className}-description`} />}
 
-          {experience?.skill && (
+          {experience?.skill && experience.skill.length > 0 && (
             <div>
               <h6>Skills</h6>
               {normalizeSkills(experience.skill, `${className}-skill`)}

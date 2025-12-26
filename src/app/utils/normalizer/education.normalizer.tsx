@@ -10,7 +10,6 @@ export const normalizeEducation = (
   className: string,
   isMobileScreen: boolean = false,
 ) => {
-  console.log(education.i18n);
   return (
     <div className={`${className}-container`}>
       {normalizeTranslations<EducationI18n>(education.i18n).map((i18n) => (
@@ -19,7 +18,7 @@ export const normalizeEducation = (
           className={`${className}-content`}
           data-education-id={education.id}
         >
-          {education?.technology && (
+          {education?.technology && education.technology.length > 0 && (
             <div className={`${className} technology-container`}>
               {normalizeTechnologies(
                 education.technology,
@@ -76,7 +75,7 @@ export const normalizeEducation = (
 
           {!i18n.description && <div className={`${className}-description`} />}
 
-          {education?.skill && (
+          {education?.skill && education.skill.length > 0 && (
             <div>
               <h6>Skills</h6>
               {normalizeSkills(education.skill, `${className}-skill`)}

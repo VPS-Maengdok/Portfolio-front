@@ -55,14 +55,21 @@
   width: 100%;
 }
 
-.card .project-list-project-technology-icon,
+.card .project-list-project-technology-list-container,
+.card .resume-project-technology-list-container {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+}
+
+.card .project-list-project-technology-list-icon,
 .card .resume-header-location,
 .card .resume-header-work-type,
 .card .resume-header-contract-type-container,
 .card .resume-header-expected-country,
 .card .resume-experience-technology-icon,
 .card .resume-education-technology-icon,
-.card .resume-project-technology-icon,
+.card .resume-project-technology-list-icon,
 .card .resume-technology-icon {
   display: inline-flex;
   flex-wrap: wrap;
@@ -77,11 +84,11 @@
   width: fit-content;
 }
 
-.card .project-list-project-technology-icon .icon,
+.card .project-list-project-technology-list-icon .icon,
 .card .resume-header-link-content a .icon,
 .card .resume-experience-technology-icon .icon,
 .card .resume-education-technology-icon .icon,
-.card .resume-project-technology-icon .icon,
+.card .resume-project-technology-list-icon .icon,
 .card .resume-technology-icon .icon {
   align-self: center;
 }
@@ -118,7 +125,6 @@
 .card .resume-education-description,
 .card .resume-project-description {
   min-height: min-content;
-  max-height: 150px;
   overflow: none;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

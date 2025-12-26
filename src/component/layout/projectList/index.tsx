@@ -97,7 +97,6 @@ export default function ProjectList(props: ProjectListProps) {
             )}
             visible={visibleProjectIds}
             visibleId={project.id}
-            hasBackgroundImage={isMobileScreen ? false : true}
           />
         ))}
       </div>
