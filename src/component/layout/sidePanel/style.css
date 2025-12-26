@@ -30,11 +30,15 @@
   font-weight: bold;
   font-size: 1.4rem;
   line-height: 1em;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
   color: #060606;
 }
 
 .informations > h2 > sup {
-  margin-left: -10px;
+  margin-top: 8px;
   font-size: 0.8rem;
   font-weight: normal;
 }

@@ -32,6 +32,7 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   min-height: 0;
+  min-width: 100%;
 }
 
 .journey-container,
