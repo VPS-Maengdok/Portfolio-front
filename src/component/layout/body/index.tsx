@@ -14,7 +14,7 @@ export default function Body() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const { selectedMenu } = useMenu();
   const isProjectsMenu = selectedMenu === 'projects';
-  const activeProject = isProjectsMenu ? selectedProject : null;
+  const hasSelectedProject = selectedProject !== null;
 
   useEffect(() => {
     const handleMenuChange = () => setSelectedProject(null);
@@ -48,21 +48,21 @@ export default function Body() {
           />
         </>
       )}
-      {!activeProject && selectedMenu === 'me' && <Introduction />}
+      {!hasSelectedProject && selectedMenu === 'me' && <Introduction />}
 
-      {!activeProject && isProjectsMenu && (
+      {!hasSelectedProject && isProjectsMenu && (
         <ProjectList onSelectedProjectChange={setSelectedProject} />
       )}
 
-      {selectedProject && (
+      {!hasSelectedProject && selectedMenu === 'cv' && (
+        <Resume onSelectedProjectChange={setSelectedProject} />
+      )}
+
+      {hasSelectedProject && selectedProject !== null && (
         <ProjectDetails
           project={selectedProject}
           onSelectedProjectChange={setSelectedProject}
         />
-      )}
-
-      {!activeProject && selectedMenu === 'cv' && (
-        <Resume onSelectedProjectChange={setSelectedProject} />
       )}
     </div>
   );
