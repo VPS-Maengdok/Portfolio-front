@@ -20,6 +20,11 @@ services:
       - "traefik.http.routers.portfolio-front.entrypoints=websecure"
       - "traefik.http.routers.portfolio-front.tls.certresolver=myresolver"
       - "traefik.http.services.portfolio-front.loadbalancer.server.port=3000"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
 
 networks:
   proxy:
