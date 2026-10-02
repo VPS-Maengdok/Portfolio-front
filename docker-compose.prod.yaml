@@ -1,18 +1,23 @@
 services:
   nextjs-app:
-    image: maengdok/portfolio_front:1.0.0
+    image: maengdok/portfolio_front:1.0.1
     container_name: maengdok_portfolio_front
     restart: always
     build:
       context: .
       dockerfile: docker/prod.Dockerfile
+      args:
+        # Public URL inlined at build time, read from .env by Compose
+        NEXT_PUBLIC_BACK_END_URL: ${NEXT_PUBLIC_BACK_END_URL:?set NEXT_PUBLIC_BACK_END_URL in .env}
     environment:
       - NODE_ENV=production
+    # proxy only: the front never calls the back server-side (the browser calls
+    # the public API URL), so a compromised front can't reach the back or Postgres.
+    # P2.2 (server-side calls) will add a dedicated network holding only front + back.
     networks:
       - proxy
-      - portfolio
-    env_file:
-      - .env
+    # No env_file: the app needs no runtime variable (NEXT_PUBLIC_* is inlined at
+    # build time), so nothing from .env reaches this Internet-facing container.
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
@@ -21,6 +26,17 @@ services:
       - "traefik.http.services.portfolio-front.loadbalancer.server.port=3000"
     # TLS certificate and secure-headers come from the websecure entrypoint (P0.3)
     mem_limit: 512m
+    pids_limit: 200
+    user: node
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+      # Next.js runtime cache (the only writable path under /app)
+      - /app/.next/cache:rw,noexec,nosuid,size=128m,uid=1000,gid=1000,mode=0700
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     logging:
       driver: "json-file"
       options:
@@ -30,7 +46,4 @@ services:
 networks:
   proxy:
     name: proxy
-    external: true
-  portfolio:
-    name: portfolio
     external: true
