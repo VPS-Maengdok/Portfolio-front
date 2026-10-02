@@ -18,8 +18,9 @@ services:
       - "traefik.docker.network=proxy"
       - "traefik.http.routers.portfolio-front.rule=Host(`maengdok.fr`)"
       - "traefik.http.routers.portfolio-front.entrypoints=websecure"
-      - "traefik.http.routers.portfolio-front.tls.certresolver=myresolver"
       - "traefik.http.services.portfolio-front.loadbalancer.server.port=3000"
+    # TLS certificate and secure-headers come from the websecure entrypoint (P0.3)
+    mem_limit: 512m
     logging:
       driver: "json-file"
       options:
@@ -28,6 +29,8 @@ services:
 
 networks:
   proxy:
+    name: proxy
     external: true
   portfolio:
+    name: portfolio
     external: true
