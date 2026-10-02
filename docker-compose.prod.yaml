@@ -11,9 +11,11 @@ services:
         NEXT_PUBLIC_BACK_END_URL: ${NEXT_PUBLIC_BACK_END_URL:?set NEXT_PUBLIC_BACK_END_URL in .env}
     environment:
       - NODE_ENV=production
+    # proxy only: the front never calls the back server-side (the browser calls
+    # the public API URL), so a compromised front can't reach the back or Postgres.
+    # P2.2 (server-side calls) will add a dedicated network holding only front + back.
     networks:
       - proxy
-      - portfolio
     # No env_file: the app needs no runtime variable (NEXT_PUBLIC_* is inlined at
     # build time), so nothing from .env reaches this Internet-facing container.
     labels:
@@ -44,7 +46,4 @@ services:
 networks:
   proxy:
     name: proxy
-    external: true
-  portfolio:
-    name: portfolio
     external: true
