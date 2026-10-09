@@ -63,6 +63,13 @@ Until the migration is done, **do not add new client-side fetching for public co
 - Accessibility is required: semantic HTML, alt text, visible focus, keyboard navigation.
 - Analytics events are sent only through `track()` from `@maengdok/telemetry` (phase 4), never by calling Umami directly.
 
+## Security and privacy (GDPR)
+
+- Fonts are self-hosted with `next/font`; never load Google Fonts or any third-party font/CDN at runtime.
+- No third-party script, iframe or embed without an explicit task (and consent handling when it sets cookies).
+- A strict Content-Security-Policy with a per-request nonce is planned: never add inline `<script>` or inline event handlers that would need `unsafe-inline`.
+- Forms that collect personal data show a short information notice next to the submit button and collect the minimum (name, email, message).
+
 ## Environment
 
 - `NEXT_PUBLIC_BACK_END_URL`: current back-end URL (client-side). To be replaced by a server-only `BACKEND_INTERNAL_URL` during phase 2.
