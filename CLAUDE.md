@@ -38,7 +38,7 @@ Import alias: `@/*` → `src/*`.
 The site is being migrated (plan, phase 2). Today everything renders client-side and navigation is React state on a single route, so search engines see almost nothing. Target:
 
 - Routes per locale: `/[locale]`, `/[locale]/projets/[slug]`, `/[locale]/cv`.
-- Public data fetched in **Server Components** from the back-end over the internal Docker network, cached with `revalidate` and tags. React Query stays only for interactive client features.
+- Public data fetched in **Server Components** from the back-end over a dedicated Docker network shared only by the front and the back (never the shared `portfolio` network), cached with `revalidate` and tags. React Query stays only for interactive client features.
 - Metadata, `robots.ts`, `sitemap.ts`, JSON-LD and OG images generated per page.
 
 Until the migration is done, **do not add new client-side fetching for public content**. New pages go into the target structure.
@@ -63,10 +63,22 @@ Until the migration is done, **do not add new client-side fetching for public co
 - Accessibility is required: semantic HTML, alt text, visible focus, keyboard navigation.
 - Analytics events are sent only through `track()` from `@maengdok/telemetry` (phase 4), never by calling Umami directly.
 
+## Security and privacy (GDPR)
+
+- Fonts are self-hosted with `next/font`; never load Google Fonts or any third-party font/CDN at runtime.
+- No third-party script, iframe or embed without an explicit task (and consent handling when it sets cookies).
+- A strict Content-Security-Policy with a per-request nonce is planned: never add inline `<script>` or inline event handlers that would need `unsafe-inline`.
+- Forms that collect personal data show a short information notice next to the submit button and collect the minimum (name, email, message).
+
 ## Environment
 
 - `NEXT_PUBLIC_BACK_END_URL`: current back-end URL (client-side). To be replaced by a server-only `BACKEND_INTERNAL_URL` during phase 2.
 - Never commit `.env`; keep the example env file (`.env.sample` or `.env.example`, whichever the repo uses) up to date.
+
+## Operations
+
+- Deploy with the production compose file only. Never tear down the production stack.
+- Deploy and rollback procedures are in the private ops handbook: follow it, and update it in the same pull request when a change affects operations.
 
 ## Definition of done
 
