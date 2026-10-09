@@ -38,7 +38,7 @@ Import alias: `@/*` → `src/*`.
 The site is being migrated (plan, phase 2). Today everything renders client-side and navigation is React state on a single route, so search engines see almost nothing. Target:
 
 - Routes per locale: `/[locale]`, `/[locale]/projets/[slug]`, `/[locale]/cv`.
-- Public data fetched in **Server Components** from the back-end over the internal Docker network, cached with `revalidate` and tags. React Query stays only for interactive client features.
+- Public data fetched in **Server Components** from the back-end over a dedicated Docker network shared only by the front and the back (never the shared `portfolio` network), cached with `revalidate` and tags. React Query stays only for interactive client features.
 - Metadata, `robots.ts`, `sitemap.ts`, JSON-LD and OG images generated per page.
 
 Until the migration is done, **do not add new client-side fetching for public content**. New pages go into the target structure.
