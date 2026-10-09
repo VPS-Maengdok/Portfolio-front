@@ -75,6 +75,11 @@ Until the migration is done, **do not add new client-side fetching for public co
 - `NEXT_PUBLIC_BACK_END_URL`: current back-end URL (client-side). To be replaced by a server-only `BACKEND_INTERNAL_URL` during phase 2.
 - Never commit `.env`; keep the example env file (`.env.sample` or `.env.example`, whichever the repo uses) up to date.
 
+## Operations
+
+- Deploy with the production compose file only. Never tear down the production stack.
+- Deploy and rollback procedures are in the private ops handbook: follow it, and update it in the same pull request when a change affects operations.
+
 ## Definition of done
 
 1. `npm run lint` and `npm run build` pass.
