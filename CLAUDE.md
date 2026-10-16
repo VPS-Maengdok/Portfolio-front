@@ -78,6 +78,7 @@ Until the migration is done, **do not add new client-side fetching for public co
 ## Operations
 
 - Deploy with the production compose file only. Never tear down the production stack.
+- Production images are built by CI (`release.yml`) and deployed only through the approved `deploy.yml` workflow: never add a `build:` section to `docker-compose.prod.yaml` or build images on the server.
 - Deploy and rollback procedures are in the private ops handbook: follow it, and update it in the same pull request when a change affects operations.
 
 ## Definition of done
