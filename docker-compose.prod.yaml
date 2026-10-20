@@ -1,14 +1,16 @@
+# Fixed project name: without it Compose uses the folder name, and ~/portfolio/back
+# and ~/reader/back would both be project "back" (orphan warnings, and
+# --remove-orphans would delete the other stack's container).
+name: portfolio-front
+
 services:
   nextjs-app:
-    image: maengdok/portfolio_front:1.0.1
+    # Built and pushed by the release workflow (NEXT_PUBLIC_BACK_END_URL is passed
+    # there as a build argument), never built on the server. IMAGE_TAG is the
+    # sha-<commit> tag being deployed; "latest" is never deployed.
+    image: ghcr.io/vps-maengdok/portfolio-front:${IMAGE_TAG:?set IMAGE_TAG to the image tag to deploy}
     container_name: maengdok_portfolio_front
     restart: always
-    build:
-      context: .
-      dockerfile: docker/prod.Dockerfile
-      args:
-        # Public URL inlined at build time, read from .env by Compose
-        NEXT_PUBLIC_BACK_END_URL: ${NEXT_PUBLIC_BACK_END_URL:?set NEXT_PUBLIC_BACK_END_URL in .env}
     environment:
       - NODE_ENV=production
     # proxy only: the front never calls the back server-side (the browser calls

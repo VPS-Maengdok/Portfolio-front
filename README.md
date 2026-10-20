@@ -34,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## CI
+
+Every pull request, and every push to `main` and `develop`, runs `.github/workflows/ci.yml`:
+
+- `npm ci`, `npm run lint` and `npm run build`;
+- `npm audit --omit=dev --audit-level=high`: fails on a high or critical vulnerability in a production dependency;
+- a build of the production image (`docker/prod.Dockerfile`), not pushed;
+- a gitleaks secret scan of the new commits.
+
+Each push to `main` publishes the production image to GitHub Container Registry, tagged `sha-<commit>` (`release.yml`). Deploys are manual and need an approval (`deploy.yml`). Dependabot opens weekly update pull requests against `develop`.
+
+## Operations
+
+Operations (deploy, rollback) are documented in the private ops handbook.
