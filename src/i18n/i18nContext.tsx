@@ -2,9 +2,10 @@ import { LocaleType } from '@/types/i18n/locale.type';
 import {
   createContext,
   ReactNode,
+  useCallback,
   useContext,
   useEffect,
-  useState,
+  useSyncExternalStore,
 } from 'react';
 import { translate, translateList } from './translation';
 
@@ -33,23 +34,44 @@ export function computeClientLocale(): LocaleType {
   return 'fr';
 }
 
-export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<LocaleType>('fr');
+// The locale lives outside React (localStorage, then the browser language), so it
+// is read with useSyncExternalStore instead of being copied into state by an effect.
+// The server and the first client render (hydration) use 'fr', the language of the
+// prerendered HTML; React then re-renders with the client value, without a
+// hydration mismatch.
+const LOCALE_EVENT = 'locale-change';
 
-  useEffect(() => {
-    const next = computeClientLocale();
-    if (next !== locale) {
-      setLocale(next);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+function subscribeToLocale(onChange: () => void) {
+  window.addEventListener(LOCALE_EVENT, onChange);
+  return () => window.removeEventListener(LOCALE_EVENT, onChange);
+}
+
+function getServerLocale(): LocaleType {
+  return 'fr';
+}
+
+export function I18nProvider({ children }: { children: ReactNode }) {
+  const locale = useSyncExternalStore(
+    subscribeToLocale,
+    computeClientLocale,
+    getServerLocale,
+  );
+
+  const setLocale = useCallback((next: LocaleType) => {
+    window.localStorage.setItem('locale', next);
+    window.dispatchEvent(new Event(LOCALE_EVENT));
   }, []);
 
+  // Sync the outside world with the current locale: <html lang>, the stored
+  // choice, and the components that listen to 'locale-change'. Same as before.
+  // Right after hydration, locale is still the server value ('fr') while the
+  // client value may differ: skip that pass, or 'fr' would overwrite the stored
+  // choice before React re-renders with the client value.
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      document.documentElement.lang = locale;
-      window.localStorage.setItem('locale', locale);
-      window.dispatchEvent(new Event('locale-change'));
-    }
+    if (locale !== computeClientLocale()) return;
+    document.documentElement.lang = locale;
+    window.localStorage.setItem('locale', locale);
+    window.dispatchEvent(new Event(LOCALE_EVENT));
   }, [locale]);
 
   const t = (key: string) => translate(locale, key);
